@@ -37,7 +37,7 @@ export const SourcesView = ({ answer }: { answer: AgentResponse }) => {
               title='Open sources'
             >
               <LinksIcon className='size-4 shrink-0 text-primary' strokeWidth={2} />
-              <span className='text-xs font-mono text-primary'>Sources</span>
+              <span className='text-xs font-mono text-primary'>来源</span>
               <div className='flex items-center -space-x-2'>
                 {previewFavicons.length > 0 ? (
                   previewFavicons.map((favicon, index) => (
@@ -76,9 +76,9 @@ export const SourcesView = ({ answer }: { answer: AgentResponse }) => {
           <div className='border-b border-border p-3 flex items-center gap-2'>
             <LinksIcon className='size-5 shrink-0 text-primary' strokeWidth={2} />
             <div className='flex flex-col'>
-              <SheetTitle className='text-primary'>Sources</SheetTitle>
+              <SheetTitle className='text-primary'>来源</SheetTitle>
               <SheetDescription className='text-muted-foreground'>
-                These are the links referenced by the answer. Click any card to open the original page.
+                以下是回答引用的链接，点击卡片即可打开原始页面。
               </SheetDescription>
             </div>
           </div>
@@ -100,7 +100,7 @@ export const SourcesView = ({ answer }: { answer: AgentResponse }) => {
         </SheetContent>
         <SheetHeader className='sr-only'>
           {/* keeps a11y happy even though we render custom header above */}
-          <SheetTitle>Sources</SheetTitle>
+          <SheetTitle>来源</SheetTitle>
         </SheetHeader>
       </Sheet>
     </div>

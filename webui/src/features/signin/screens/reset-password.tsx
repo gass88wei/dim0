@@ -41,9 +41,9 @@ export function ResetPasswordPage() {
     <div className="w-full max-w-md mx-auto">
       <Card className="bg-card text-card-foreground border border-border shadow-xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl">Reset your password</CardTitle>
+          <CardTitle className="text-2xl">重置密码</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Choose a new password for your account.
+            为你的账户设置新密码。
           </CardDescription>
         </CardHeader>
 
@@ -51,13 +51,13 @@ export function ResetPasswordPage() {
           {tokenError ? (
             <div className="space-y-4">
               <p className="text-sm text-destructive">
-                This reset link is missing a token. Please request a new password reset email.
+                这个重置链接缺少令牌，请重新申请一封重置邮件。
               </p>
               <Link
                 to="/forgot-password"
                 className="block w-full text-center text-sm font-medium underline underline-offset-2"
               >
-                Request a new reset link
+                重新申请重置链接
               </Link>
             </div>
           ) : (
@@ -78,7 +78,7 @@ export function ResetPasswordPage() {
               }}
             >
               <div className="space-y-2">
-                <Label htmlFor="password">New password</Label>
+                <Label htmlFor="password">新密码</Label>
                 <div className="relative">
                   <PasswordInput
                     id="password"
@@ -96,7 +96,7 @@ export function ResetPasswordPage() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="confirm">Confirm password</Label>
+                <Label htmlFor="confirm">确认密码</Label>
                 <div className="relative">
                   <PasswordInput
                     id="confirm"
@@ -110,7 +110,7 @@ export function ResetPasswordPage() {
                   <LockIcon className="pointer-events-none absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" strokeWidth={2} />
                 </div>
                 {confirm.length > 0 && !passwordsMatch ? (
-                  <p className="text-xs text-destructive">Passwords do not match.</p>
+                  <p className="text-xs text-destructive">两次输入的密码不一致。</p>
                 ) : null}
               </div>
 
@@ -128,7 +128,7 @@ export function ResetPasswordPage() {
                 {mut.isPending ? (
                   <span className="inline-flex items-center gap-2">
                     <Loader2Icon className="h-4 w-4 animate-spin" />
-                    Resetting…
+                    重置中…
                   </span>
                 ) : (
                   "Reset password"
@@ -138,7 +138,7 @@ export function ResetPasswordPage() {
               <p className="text-center text-sm text-muted-foreground">
                 Link expired or invalid?{" "}
                 <Link to="/forgot-password" className="font-medium underline">
-                  Request a new one
+                  重新申请一个
                 </Link>
               </p>
             </form>

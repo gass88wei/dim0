@@ -142,7 +142,7 @@ export function SubscriptionCard({
           className='text-destructive focus:text-destructive'
         >
           <DeleteIcon className='w-4 h-4 mr-2' strokeWidth={2} />
-          Delete
+          删除
         </ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>

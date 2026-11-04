@@ -359,29 +359,29 @@ export function CanvasContextMenu({ wrapRef, store, rendererRef }: CanvasContext
         // listener suppresses the native menu — so suppress it here too.
         onContextMenu={(e) => e.preventDefault()}
       >
-        <DropdownMenuLabel className="text-muted-foreground">Position</DropdownMenuLabel>
+        <DropdownMenuLabel className="text-muted-foreground">位置</DropdownMenuLabel>
         <DropdownMenuItem onSelect={() => handleSendBackward()}>
           <StackMinusIcon className="size-4" />
-          Send backward
+          下移一层
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => handleSendForward()}>
           <StackPlusIcon className="size-4" />
-          Send forward
+          上移一层
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => handleSendToBack()}>
           <StackMinusIcon className="size-4" />
-          Send to back
+          置于底层
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => handleSendToFront()}>
           <StackPlusIcon className="size-4" />
-          Send to front
+          置于顶层
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />
-        <DropdownMenuLabel className="text-muted-foreground">Export</DropdownMenuLabel>
+        <DropdownMenuLabel className="text-muted-foreground">导出</DropdownMenuLabel>
         <DropdownMenuItem onSelect={() => void handleExportPng()}>
           <ClipboardIcon className="size-4" />
-          Copy selected as PNG
+          将所选内容复制为 PNG
         </DropdownMenuItem>
         <DropdownMenuCheckboxItem
           checked={exportTransparent}
@@ -389,11 +389,11 @@ export function CanvasContextMenu({ wrapRef, store, rendererRef }: CanvasContext
           // Toggling shouldn't dismiss the menu.
           onSelect={(e) => e.preventDefault()}
         >
-          Transparent background
+          透明背景
         </DropdownMenuCheckboxItem>
         <DropdownMenuItem onSelect={() => void handleExportSvg()}>
           <ImagePlaceholderIcon className="size-4" />
-          Download as SVG
+          下载为 SVG
         </DropdownMenuItem>
 
         {showAiSection && (
@@ -417,7 +417,7 @@ export function CanvasContextMenu({ wrapRef, store, rendererRef }: CanvasContext
                       <span>{action.label}</span>
                       {action.key === "drawify" && (
                         <span className="ml-auto rounded-sm border border-border px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-muted-foreground">
-                          Beta
+                          测试版
                         </span>
                       )}
                     </DropdownMenuItem>
@@ -430,7 +430,7 @@ export function CanvasContextMenu({ wrapRef, store, rendererRef }: CanvasContext
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
                   <ChatTranslateIcon className="size-4 text-secondary-foreground" />
-                  Translate
+                  翻译
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent className="min-w-[190px]" onContextMenu={(e) => e.preventDefault()}>
                   {COMMON_LANGUAGES.map((language) => (
@@ -447,7 +447,7 @@ export function CanvasContextMenu({ wrapRef, store, rendererRef }: CanvasContext
                   >
                     <input
                       className="h-7 min-w-0 flex-1 rounded-sm border border-input bg-background px-2 text-xs outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
-                      placeholder="Custom language…"
+                      placeholder="自定义语言…"
                       value={customLanguage}
                       onChange={(e) => setCustomLanguage(e.target.value)}
                       onPointerDown={(e) => e.stopPropagation()}
@@ -460,7 +460,7 @@ export function CanvasContextMenu({ wrapRef, store, rendererRef }: CanvasContext
                         closeMenu()
                       }}
                     >
-                      Go
+                      前往
                     </button>
                   </div>
                 </DropdownMenuSubContent>

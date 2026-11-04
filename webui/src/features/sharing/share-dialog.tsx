@@ -122,23 +122,22 @@ export function ShareDialog({ boardId, boardLabel, open, onOpenChange }: ShareDi
         >
           <WarningIcon className="mt-0.5 size-4 shrink-0" weight="fill" />
           <span>
-            Sharing this board also shares every sub-board and nested
-            note inside it. Move anything private out before inviting.
+            分享这块画布会连带分享其中所有子画布和嵌套便签。邀请前请先移出私密内容。
           </span>
         </div>
 
         <section className="flex flex-col gap-3">
-          <div className="text-sm text-muted-foreground">Anyone with the link can:</div>
+          <div className="text-sm text-muted-foreground">任何拿到链接的人可以：</div>
           <div className="flex items-center gap-2">
             <RoleToggle
               value="viewer"
-              label="View"
+              label="查看"
               selected={selectedRole === "viewer"}
               onSelect={() => setSelectedRole("viewer")}
             />
             <RoleToggle
               value="member"
-              label="Edit"
+              label="编辑"
               selected={selectedRole === "member"}
               onSelect={() => setSelectedRole("member")}
             />
@@ -191,9 +190,9 @@ export function ShareDialog({ boardId, boardLabel, open, onOpenChange }: ShareDi
         <hr className="my-2 border-border" />
 
         <section className="flex flex-col gap-2">
-          <div className="text-sm font-medium">People with access</div>
+          <div className="text-sm font-medium">有权限的人</div>
           {membersQuery.isLoading ? (
-            <div className="text-sm text-muted-foreground">Loading…</div>
+            <div className="text-sm text-muted-foreground">加载中…</div>
           ) : (
             <ul className="flex flex-col gap-1">
               {(membersQuery.data ?? []).map((m) => (
@@ -254,7 +253,7 @@ function LinkRow({ link, onCopy }: { link: ShareLink; onCopy: () => void }) {
         className="flex-1 truncate bg-transparent text-xs font-mono text-muted-foreground outline-none"
       />
       <Button size="sm" variant="secondary" onClick={onCopy}>
-        Copy
+        复制
       </Button>
     </div>
   )

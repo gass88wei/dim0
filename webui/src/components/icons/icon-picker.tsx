@@ -87,7 +87,7 @@ export const IconPicker = ({ value, onChange, onRemove, className }: IconPickerP
       <div className="border-b p-2">
         <Input
           autoFocus
-          placeholder="Search icons..."
+          placeholder="搜索图标…"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           className="h-8"
@@ -224,7 +224,7 @@ const ColorStrip = ({ activeColor, canRemove, isDark, onColorClick, onRemove }: 
           onClick={onRemove}
           className="ml-1 rounded px-2 py-1 text-xs text-muted-foreground hover:bg-accent hover:text-accent-foreground"
         >
-          Remove
+          移除
         </button>
       )}
     </div>

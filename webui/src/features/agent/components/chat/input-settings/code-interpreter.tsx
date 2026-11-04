@@ -41,11 +41,11 @@ export const CodeInterpreterChoiceMenu = () => {
           <button
             className={buttonClass}
             onClick={toggleCodeInterpreter}
-            aria-label="Toggle Code Interpreter"
-            title="Toggle Code Interpreter"
+            aria-label="开关代码解释器"
+            title="开关代码解释器"
           >
             <CodeInterpreterIcon className={iconClass} strokeWidth={2} />
-            <span className="text-xs">Code interpreter</span>
+            <span className="text-xs">代码解释器</span>
           </button>
         </TooltipTrigger>
       </div>

@@ -61,12 +61,12 @@ export function NotesSearchDialog({ boardId }: { boardId: string }) {
       onOpenChange={(next) => {
         if (!next) close()
       }}
-      title="Search notes"
-      description="Find a note by title or content and jump to it."
+      title="搜索便签"
+      description="按标题或内容找到便签并跳转过去。"
     >
-      <CommandInput placeholder="Search notes…" />
+      <CommandInput placeholder="搜索便签…" />
       <CommandList>
-        <CommandEmpty>No notes found.</CommandEmpty>
+        <CommandEmpty>没有找到便签。</CommandEmpty>
         {rows.map((row) => (
           <CommandItem key={row.id} value={row.value} onSelect={() => jump(row)}>
             <div className="flex min-w-0 flex-col">

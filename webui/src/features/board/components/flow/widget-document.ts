@@ -339,7 +339,7 @@ export const getWidgetThemeTokens = (): WidgetThemeTokens => {
  */
 export const buildWidgetDocument = (
   html: string,
-  title = "Widget",
+  title = "小组件",
   options?: {
     autoHeightFrameId?: string
   }

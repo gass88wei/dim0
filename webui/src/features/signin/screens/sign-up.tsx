@@ -54,9 +54,9 @@ export function SignupPage() {
     <div className="w-full max-w-md mx-auto">
       <Card className="bg-card text-card-foreground border border-border shadow-xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl">Create your account</CardTitle>
+          <CardTitle className="text-2xl">创建账户</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Start organizing your chats and boards
+            开始整理你的对话和画布
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -73,7 +73,7 @@ export function SignupPage() {
             }}
           >
             <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">昵称</Label>
               <div className="relative">
                 <Input
                   id="name"
@@ -89,7 +89,7 @@ export function SignupPage() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="username">Username</Label>
+              <Label htmlFor="username">用户名</Label>
               <div className="relative">
                 <Input
                   id="username"
@@ -105,7 +105,7 @@ export function SignupPage() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">邮箱</Label>
               <div className="relative">
                 <Input
                   id="email"
@@ -122,7 +122,7 @@ export function SignupPage() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">密码</Label>
               <div className="relative">
                 <PasswordInput
                   id="password"
@@ -152,7 +152,7 @@ export function SignupPage() {
               {mut.isPending ? (
                 <span className="inline-flex items-center gap-2">
                   <Loader2Icon className="h-4 w-4 animate-spin" />
-                  Creating…
+                  创建中…
                 </span>
               ) : (
                 "Create account"
@@ -167,7 +167,7 @@ export function SignupPage() {
                 rel="noreferrer"
                 className="underline underline-offset-2"
               >
-                Terms
+                服务条款
               </a>{" "}
               and{" "}
               <a
@@ -176,7 +176,7 @@ export function SignupPage() {
                 rel="noreferrer"
                 className="underline underline-offset-2"
               >
-                Privacy Policy
+                隐私政策
               </a>
               .
             </p>
@@ -186,7 +186,7 @@ export function SignupPage() {
             <p className="text-sm text-muted-foreground">
               Already have an account?{" "}
               <Link to="/signin" className="font-medium underline">
-                Sign in
+                登录
               </Link>
             </p>
           </form>

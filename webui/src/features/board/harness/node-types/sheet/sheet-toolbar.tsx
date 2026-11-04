@@ -75,19 +75,19 @@ export function SheetEditorToolbar({
         "[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
       )}
     >
-      <MarkButton tooltip="Bold" active={active.bold} onClick={() => editor.chain().focus().toggleBold().run()}>
+      <MarkButton tooltip="加粗" active={active.bold} onClick={() => editor.chain().focus().toggleBold().run()}>
         <TextB size={14} weight="bold" />
       </MarkButton>
-      <MarkButton tooltip="Italic" active={active.italic} onClick={() => editor.chain().focus().toggleItalic().run()}>
+      <MarkButton tooltip="斜体" active={active.italic} onClick={() => editor.chain().focus().toggleItalic().run()}>
         <TextItalic size={14} />
       </MarkButton>
-      <MarkButton tooltip="Underline" active={active.underline} onClick={() => editor.chain().focus().toggleUnderline().run()}>
+      <MarkButton tooltip="下划线" active={active.underline} onClick={() => editor.chain().focus().toggleUnderline().run()}>
         <TextUnderline size={14} />
       </MarkButton>
-      <MarkButton tooltip="Highlight" active={active.highlight} onClick={() => editor.chain().focus().toggleMark("highlight").run()}>
+      <MarkButton tooltip="高亮" active={active.highlight} onClick={() => editor.chain().focus().toggleMark("highlight").run()}>
         <Highlighter size={14} />
       </MarkButton>
-      <MarkButton tooltip="Strikethrough" active={active.strike} onClick={() => editor.chain().focus().toggleStrike().run()}>
+      <MarkButton tooltip="删除线" active={active.strike} onClick={() => editor.chain().focus().toggleStrike().run()}>
         <TextStrikethrough size={14} />
       </MarkButton>
     </div>

@@ -62,7 +62,7 @@ export function CreateSubscriptionDialog({
     <Dialog open={open} onOpenChange={o => { setOpen(o); if (!o) reset() }}>
       <DialogTrigger
         render={trigger ?? (
-          <Button size='sm' className='rounded-md'>Add new subscription</Button>
+          <Button size='sm' className='rounded-md'>新增订阅</Button>
         )}
       />
 
@@ -78,7 +78,7 @@ export function CreateSubscriptionDialog({
           <div className='space-y-5'>
             {/* Topic */}
             <div className='space-y-2'>
-              <label className='text-sm font-medium'>Topic</label>
+              <label className='text-sm font-medium'>主题</label>
               <Input
                 placeholder='custom topic'
                 value={topic}
@@ -120,7 +120,7 @@ export function CreateSubscriptionDialog({
 
             {/* Description */}
             <div className='space-y-2'>
-              <label className='text-sm font-medium'>Description (optional)</label>
+              <label className='text-sm font-medium'>描述（可选）</label>
               <Textarea
                 rows={6}
                 value={desc}
@@ -135,9 +135,9 @@ export function CreateSubscriptionDialog({
 
             {/* Actions */}
             <div className='flex justify-end gap-2'>
-              <Button variant='ghost' onClick={() => setOpen(false)}>Cancel</Button>
+              <Button variant='ghost' onClick={() => setOpen(false)}>取消</Button>
               <Button onClick={submit} disabled={disabledCreate} className='rounded-md'>
-                Create
+                创建
               </Button>
             </div>
           </div>

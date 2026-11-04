@@ -33,7 +33,7 @@ export function BoardLimitDialog({ open, onOpenChange, planLimit, onCreateLocal 
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[480px]">
         <DialogHeader>
-          <DialogTitle>You've reached your plan's board limit</DialogTitle>
+          <DialogTitle>已达到当前方案的画布数量上限</DialogTitle>
           <DialogDescription className="text-sm leading-6 text-foreground/80">
             Your plan includes {planLimit} synced boards, backed up and shareable across your
             devices. Upgrade for unlimited synced boards, or create a local-only board that stays
@@ -48,7 +48,7 @@ export function BoardLimitDialog({ open, onOpenChange, planLimit, onCreateLocal 
               onCreateLocal()
             }}
           >
-            Create a local-only board
+            创建纯本地画布
           </Button>
           <Button
             onClick={() => {
@@ -56,7 +56,7 @@ export function BoardLimitDialog({ open, onOpenChange, planLimit, onCreateLocal 
               void navigate({ to: SettingsBillingUrl })
             }}
           >
-            Upgrade
+            升级
           </Button>
         </DialogFooter>
       </DialogContent>

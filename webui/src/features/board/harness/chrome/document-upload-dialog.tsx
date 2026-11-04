@@ -112,9 +112,9 @@ const DocumentUploadDialogBody = ({
           accept="application/pdf"
           onChange={(event) => setFile(event.target.files?.[0] ?? null)}
         />
-        <p className="text-xs text-muted-foreground">PDF files only.</p>
+        <p className="text-xs text-muted-foreground">仅支持 PDF 文件。</p>
         <p className="text-xs text-muted-foreground">
-          Document must stay within both limits: 30 pages max and 5 MB max.
+          文档需同时满足：最多 30 页、最大 5 MB。
         </p>
       </div>
       <div className="flex justify-end gap-2">
@@ -124,7 +124,7 @@ const DocumentUploadDialogBody = ({
           onClick={() => onOpenChange(false)}
           disabled={submitting}
         >
-          Cancel
+          取消
         </Button>
         <Button type="submit" disabled={!file || !boardId || submitting}>
           {submitting ? "Parsing…" : "Upload & Parse"}
@@ -147,7 +147,7 @@ export const DocumentUploadDialog = ({
   <Dialog open={open} onOpenChange={onOpenChange}>
     <DialogContent className="sm:max-w-md">
       <DialogHeader>
-        <DialogTitle>Upload a document</DialogTitle>
+        <DialogTitle>上传文档</DialogTitle>
       </DialogHeader>
       {open && <DocumentUploadDialogBody onOpenChange={onOpenChange} />}
     </DialogContent>

@@ -70,10 +70,10 @@ export function VerifyEmailPage() {
         <CardHeader className="text-center">
           <CardTitle className="text-2xl flex items-center justify-center gap-2">
             <MailCheckIcon className="h-6 w-6 text-secondary-foreground" />
-            Verify your email
+            验证你的邮箱
           </CardTitle>
           <CardDescription className="text-muted-foreground">
-            We sent a verification link to <span className="font-medium text-foreground">{userEmail}</span>
+            我们已发送验证链接到 <span className="font-medium text-foreground">{userEmail}</span>
           </CardDescription>
         </CardHeader>
 
@@ -162,7 +162,7 @@ export function VerifyEmailPage() {
               navigate({ to: "/signin", replace: true })
             }}
           >
-            Sign out
+            退出登录
           </Button>
         </CardContent>
       </Card>

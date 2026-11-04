@@ -32,17 +32,17 @@ const NoteSourceItem = ({ source }: { source: NoteSource }) => {
         <button
           type="button"
           onClick={locate}
-          title="Find on board"
-          aria-label={`Find "${source.label || "Untitled note"}" on board`}
+          title="在画布中查找"
+          aria-label={`Find "${source.label || "未命名便签"}" on board`}
           className="flex min-w-0 flex-1 cursor-pointer items-center gap-2 text-left hover:text-secondary-foreground"
         >
           <NoteIcon className="size-3.5 shrink-0 text-primary" strokeWidth={2} />
-          <span className="truncate text-primary">{source.label || "Untitled note"}</span>
+          <span className="truncate text-primary">{source.label || "未命名便签"}</span>
         </button>
         {source.snippets.length > 0 && (
           <button
             type="button"
-            aria-label={open ? "Hide snippets" : "Show snippets"}
+            aria-label={open ? "隐藏摘要" : "显示摘要"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
             className="shrink-0 rounded p-0.5 text-muted-foreground hover:text-secondary-foreground"
@@ -76,7 +76,7 @@ export const NoteSourcesView = ({ sources }: { sources: NoteSource[] }) => {
     <div className="mt-2 min-w-0 space-y-1">
       <div className="ml-1 flex items-center gap-1 text-xs font-mono text-muted-foreground">
         <NoteIcon className="size-4 shrink-0 text-primary" strokeWidth={2} />
-        <span className="text-primary">Notes</span>
+        <span className="text-primary">便签</span>
       </div>
       {sources.map((s) => (
         <NoteSourceItem key={s.noteId} source={s} />

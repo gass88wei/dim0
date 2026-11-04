@@ -272,7 +272,7 @@ export function StylePanel({
 
   const settingContent: Record<SettingKey, React.ReactNode> = {
     strokeColor: (
-      <Section title="Border color">
+      <Section title="边框颜色">
         <ColorGrid
           value={s.strokeColor}
           onPick={(v) => onStyleChange({ strokeColor: v ?? TRANSPARENT_HEX })}
@@ -282,7 +282,7 @@ export function StylePanel({
       </Section>
     ),
     backgroundColor: (
-      <Section title="Background color">
+      <Section title="背景色">
         <ColorGrid
           value={s.backgroundColor ?? null}
           onPick={(v) => onStyleChange({ backgroundColor: v ?? TRANSPARENT_HEX })}
@@ -292,7 +292,7 @@ export function StylePanel({
       </Section>
     ),
     textColor: (
-      <Section title="Text color">
+      <Section title="文字颜色">
         <ColorGrid
           value={s.textColor}
           onPick={(v) => onStyleChange({ textColor: v ?? undefined })}
@@ -301,7 +301,7 @@ export function StylePanel({
       </Section>
     ),
     strokeWidth: (
-      <Section title="Stroke width">
+      <Section title="描边宽度">
         <ToggleGroup
           type="single"
           value={String(s.strokeWidth ?? 2)}
@@ -321,7 +321,7 @@ export function StylePanel({
       </Section>
     ),
     strokeStyle: (
-      <Section title="Stroke style">
+      <Section title="描边样式">
         <ToggleGroup
           type="single"
           value={s.strokeStyle ?? "solid"}
@@ -350,7 +350,7 @@ export function StylePanel({
       </Section>
     ),
     roughness: (
-      <Section title="Sloppiness">
+      <Section title="随意度">
         <ToggleGroup
           type="single"
           value={String(s.roughness ?? 0)}
@@ -370,7 +370,7 @@ export function StylePanel({
       </Section>
     ),
     roundness: (
-      <Section title="Roundness">
+      <Section title="圆角">
         <ToggleGroup
           type="single"
           value={String((s.roundness ?? 0) >= 1 ? 3 : 0)}
@@ -393,7 +393,7 @@ export function StylePanel({
       </Section>
     ),
     textAlign: (
-      <Section title="Text align">
+      <Section title="文本对齐">
         <ToggleGroup
           type="single"
           value={s.textAlign ?? "left"}
@@ -422,7 +422,7 @@ export function StylePanel({
       </Section>
     ),
     fontFamily: (
-      <Section title="Font family">
+      <Section title="字体">
         <ToggleGroup
           type="single"
           value={s.fontFamily ?? "sans-serif"}
@@ -463,7 +463,7 @@ export function StylePanel({
       </Section>
     ),
     fontSize: (
-      <Section title="Font size">
+      <Section title="字号">
         <ToggleGroup
           type="single"
           value={s.fontSize ?? "M"}
@@ -483,7 +483,7 @@ export function StylePanel({
       </Section>
     ),
     pathStyle: (
-      <Section title="Path style">
+      <Section title="线条样式">
         <ToggleGroup
           type="single"
           value={s.pathStyle ?? "bezier"}
@@ -503,7 +503,7 @@ export function StylePanel({
       </Section>
     ),
     sourceArrowhead: (
-      <Section title="Source arrowhead">
+      <Section title="起点箭头">
         <ToggleGroup
           type="single"
           value={s.sourceArrowhead ?? "none"}
@@ -523,7 +523,7 @@ export function StylePanel({
       </Section>
     ),
     targetArrowhead: (
-      <Section title="Target arrowhead">
+      <Section title="终点箭头">
         <ToggleGroup
           type="single"
           value={s.targetArrowhead ?? "arrow-filled"}

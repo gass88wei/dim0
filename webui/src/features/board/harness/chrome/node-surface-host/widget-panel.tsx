@@ -128,9 +128,9 @@ export const WidgetPanel = memo(function WidgetPanel({
   if (!node) {
     return (
       <div className={`${PANEL_CLASS} items-center justify-center gap-3 text-sm text-muted-foreground`}>
-        <p>This widget no longer exists.</p>
+        <p>这个小组件已不存在。</p>
         <Button variant="outline" size="sm" onClick={onClose}>
-          Close
+          关闭
         </Button>
       </div>
     )
@@ -162,7 +162,7 @@ export const WidgetPanel = memo(function WidgetPanel({
                   }
                 }}
                 className="w-full border-0 border-b border-foreground/30 bg-transparent px-0 py-0.5 text-sm font-semibold text-foreground focus:border-secondary-foreground focus:outline-none"
-                placeholder="Untitled widget"
+                placeholder="未命名小组件"
               />
             ) : (
               <button
@@ -181,8 +181,8 @@ export const WidgetPanel = memo(function WidgetPanel({
             variant="ghost"
             size="icon-sm"
             onClick={handleDownloadHtml}
-            title="Download HTML"
-            aria-label="Download HTML"
+            title="下载 HTML"
+            aria-label="下载 HTML"
             disabled={!html}
           >
             <DownloadIcon className="size-4" />
@@ -191,8 +191,8 @@ export const WidgetPanel = memo(function WidgetPanel({
             variant="ghost"
             size="icon-sm"
             onClick={onClose}
-            title="Close"
-            aria-label="Close"
+            title="关闭"
+            aria-label="关闭"
           >
             <CancelPlainIcon className="size-4" />
           </Button>
@@ -202,8 +202,8 @@ export const WidgetPanel = memo(function WidgetPanel({
       <Tabs value={activeTab} onValueChange={setActiveTab} className="min-h-0 flex-1 gap-0">
         <div className="border-b border-border/70 px-4 py-2">
           <TabsList>
-            <TabsTrigger value="rendered">Rendered</TabsTrigger>
-            <TabsTrigger value="code">Code</TabsTrigger>
+            <TabsTrigger value="rendered">渲染效果</TabsTrigger>
+            <TabsTrigger value="code">代码</TabsTrigger>
           </TabsList>
         </div>
 
@@ -212,12 +212,12 @@ export const WidgetPanel = memo(function WidgetPanel({
             {html ? (
               <WidgetIframe
                 html={html}
-                title="Widget"
+                title="小组件"
                 className="h-full w-full border-0 bg-transparent"
               />
             ) : (
               <div className="flex h-full w-full items-center justify-center px-6 text-center text-sm text-muted-foreground">
-                Widget HTML is empty.
+                小组件 HTML 为空。
               </div>
             )}
           </div>
@@ -228,7 +228,7 @@ export const WidgetPanel = memo(function WidgetPanel({
               onChange={setHtmlDraft}
               language="html"
               placeholder={`<section style="padding:24px;">
-  <h1>Hello widget</h1>
+  <h1>你好，小组件</h1>
   <p>Use var(--card), var(--foreground), var(--border), var(--radius), and var(--shadow-sm).</p>
 </section>`}
             />

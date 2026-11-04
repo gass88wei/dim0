@@ -31,7 +31,7 @@ export function ShareButton() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label="Share this board"
+        aria-label="分享这块画布"
         data-coachmark="share"
         className={
           "flex items-center gap-1.5 rounded-md px-1.5 py-1 " +
@@ -40,7 +40,7 @@ export function ShareButton() {
         }
       >
         <ShareIcon className="size-3.5 shrink-0" />
-        Share
+        分享
       </button>
       <ShareDialog
         boardId={boardId}

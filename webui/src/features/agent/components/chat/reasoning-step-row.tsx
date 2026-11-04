@@ -61,7 +61,7 @@ export const ReasoningStepRow = ({
     >
       {isSynthesis && (
         <div className='pb-2 text-center text-sm font-medium text-muted-foreground font-mono'>
-          Synthesis
+          总结
         </div>
       )}
       {hasReasoningDetails && (
@@ -70,7 +70,7 @@ export const ReasoningStepRow = ({
             className='inline-flex items-center gap-1 text-sm font-normal text-muted-foreground'
             onClick={() => setViewMore((value) => !value)}
           >
-            <span>Reasoning</span>
+            <span>思考过程</span>
             {viewMore ? (
               <ArrowCollapseIcon
                 className='size-4'

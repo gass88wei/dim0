@@ -40,17 +40,17 @@ export function SettingsScreen() {
       <div className="mx-auto w-full max-w-4xl px-6 py-24 space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Profile</CardTitle>
-            <CardDescription>Basic account details</CardDescription>
+            <CardTitle>个人资料</CardTitle>
+            <CardDescription>账户基本信息</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex items-center justify-between gap-4">
-              <span className="text-sm text-muted-foreground">Email</span>
+              <span className="text-sm text-muted-foreground">邮箱</span>
               <span className="text-sm font-medium">{userEmail}</span>
             </div>
             {billingActive ? (
               <div className="flex items-center justify-between gap-4">
-                <span className="text-sm text-muted-foreground">Current plan</span>
+                <span className="text-sm text-muted-foreground">当前方案</span>
                 <div className="flex items-center gap-2">
                   <TierBadge plan={userPlan} />
                   {expiresAtLabel ? (
@@ -67,12 +67,12 @@ export function SettingsScreen() {
         {billingActive ? (
           <Card className="border-secondary-foreground/60 bg-gradient-to-br from-secondary-foreground/20 via-secondary-foreground/10 to-card">
             <CardHeader>
-              <CardTitle>Billing</CardTitle>
-              <CardDescription>Manage subscription and usage limits</CardDescription>
+              <CardTitle>订阅与账单</CardTitle>
+              <CardDescription>管理订阅与用量上限</CardDescription>
             </CardHeader>
             <CardContent>
               <Button onClick={() => navigate({ to: "/settings/billing" })}>
-                Open billing
+                打开账单
               </Button>
             </CardContent>
           </Card>

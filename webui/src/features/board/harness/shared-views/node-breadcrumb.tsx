@@ -31,7 +31,7 @@ export function NodeBreadcrumb({ path, onNavigate, className }: NodeBreadcrumbPr
         "flex items-center gap-1 px-2 text-xs text-muted-foreground",
         className,
       )}
-      aria-label="Node path"
+      aria-label="节点路径"
     >
       {path.map((item, i) => {
         const isLast = i === path.length - 1

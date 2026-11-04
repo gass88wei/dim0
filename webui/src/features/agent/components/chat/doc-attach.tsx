@@ -20,8 +20,8 @@ export const DocAttachButton = ({ boardId }: { boardId: string }) => {
         type="button"
         disabled={!canParse || busy}
         onClick={pick}
-        aria-label="Attach a PDF"
-        title={canParse ? "Attach a PDF to ask about it" : "Sign in or add a Mistral key to attach documents"}
+        aria-label="附加 PDF"
+        title={canParse ? "附加 PDF 以便提问" : "登录或添加 Mistral 密钥以附加文档"}
         className="flex items-center justify-center rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-secondary-foreground disabled:opacity-40 disabled:pointer-events-none"
       >
         {busy ? <Spinner /> : <DocumentFileIcon className="size-4" strokeWidth={2} />}

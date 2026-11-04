@@ -26,7 +26,7 @@ export const StepsPopoverContent = ({ toolSteps }: { toolSteps: ToolCallStep[] }
       <div className='flex items-center justify-between mb-2 px-0.5'>
         <div className='flex items-center gap-1.5 text-xs font-mono font-medium text-muted-foreground'>
           <SparklesIcon className='size-3.5 text-secondary-foreground' weight='fill' />
-          <span>Steps in this turn</span>
+          <span>本轮步骤</span>
         </div>
         <span className='text-xs font-mono text-secondary-foreground tabular-nums'>
           {toolSteps.length}

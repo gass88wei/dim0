@@ -78,7 +78,7 @@ export const ImageGenView = ({
             type="button"
             onClick={handleDownload}
             className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-md bg-background/80 shadow-sm backdrop-blur-sm border hover:bg-accent transition"
-            aria-label="Download image"
+            aria-label="下载图片"
           >
             <DownloadIcon className="size-4" strokeWidth={2} />
           </button>

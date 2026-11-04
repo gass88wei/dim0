@@ -38,22 +38,22 @@ export function CopilotSheet({
       >
         {/* Radix Dialog primitive requires an accessible title for content. */}
         <SheetHeader className="sr-only">
-          <SheetTitle>Board Assistant</SheetTitle>
+          <SheetTitle>画布助手</SheetTitle>
         </SheetHeader>
         <div className="px-4 py-3 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 text-sm font-medium">
             <div className="flex items-center justify-center rounded-md bg-gradient-to-br from-wiki-link to-secondary-foreground size-6 shadow-sm">
               <SparklesIcon className="size-3.5 text-primary-foreground" weight="fill" />
             </div>
-            Board Assistant
+            画布助手
           </div>
           <div className="flex items-center gap-1">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => onOpenFullChat(currentChatId)}
-              title="Open full chat view"
-              aria-label="Open full chat view"
+              title="打开完整对话视图"
+              aria-label="打开完整对话视图"
             >
               <ExternalLinkIcon className="size-4" strokeWidth={2} />
             </Button>
@@ -61,8 +61,8 @@ export function CopilotSheet({
               variant="ghost"
               size="icon"
               onClick={() => onOpenChange(false)}
-              title="Close"
-              aria-label="Close"
+              title="关闭"
+              aria-label="关闭"
             >
               <ArrowExpandIcon className="size-4" strokeWidth={2} />
             </Button>
@@ -84,7 +84,7 @@ export function CopilotSheet({
             />
           ) : open ? (
             <div className="w-full h-full flex items-center justify-center text-sm text-muted-foreground">
-              Select a board to start a conversation.
+              选择一块画布开始对话。
             </div>
           ) : null}
         </div>

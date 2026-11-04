@@ -46,7 +46,7 @@ export const Dashboard = ({ className, hideTitle = false }: { className?: string
             place-items-center
           "
           role="list"
-          aria-label="Boards"
+          aria-label="画布"
         >
           <div className="w-full h-full flex justify-center items-center">
             <NewBoardCard />
@@ -70,17 +70,17 @@ export const Dashboard = ({ className, hideTitle = false }: { className?: string
 
         {isLoading && (
           <div className="text-center mt-6 text-muted-foreground text-sm">
-            Loading…
+            加载中…
           </div>
         )}
         {isError && (
           <div className="text-center mt-6 text-destructive text-sm">
-            Failed to load boards
+            画布加载失败
           </div>
         )}
         {!isLoading && !isError && sorted.length === 0 && (
           <div className="text-center mt-8 text-muted-foreground">
-            No boards yet. Create your first one above!
+            还没有画布，先在上面创建一个吧！
           </div>
         )}
       </div>

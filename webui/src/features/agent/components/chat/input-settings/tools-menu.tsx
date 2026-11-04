@@ -29,7 +29,7 @@ export const ToolsMenu = ({ memorySearchAvailable = true }: ToolsMenuProps) => {
               render={
                 <button
                   className={buttonClass}
-                  aria-label="Open settings"
+                  aria-label="打开设置"
                 >
                   <ToolsMenuIcon className="size-4 shrink-0" strokeWidth={2} />
                 </button>
@@ -38,13 +38,13 @@ export const ToolsMenu = ({ memorySearchAvailable = true }: ToolsMenuProps) => {
           </TooltipTrigger>
         </div>
         <TooltipContent>
-          Settings
+          设置
         </TooltipContent>
       </Tooltip>
       <DialogContent className="w-[320px] max-w-[calc(100%-2rem)] rounded-lg p-4">
         <DialogHeader className="mb-2">
           <DialogTitle className="text-sm font-medium text-muted-foreground">
-            Settings
+            设置
           </DialogTitle>
         </DialogHeader>
         <div className="flex flex-col gap-1">

@@ -60,7 +60,7 @@ export const NoteIconControl = ({
         {icon ? (
           <button
             type="button"
-            aria-label="Change icon"
+            aria-label="更换图标"
             className={cn(
               "-ml-2 rounded-md p-2 transition-colors hover:bg-accent",
               className,

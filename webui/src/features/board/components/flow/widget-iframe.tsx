@@ -18,7 +18,7 @@ type WidgetIframeProps = {
 export const WidgetIframe = memo(function WidgetIframe({
   html,
   className,
-  title = "Widget preview",
+  title = "小组件预览",
   autoHeight = false,
   maxHeight = 800,
   minHeight = 260,

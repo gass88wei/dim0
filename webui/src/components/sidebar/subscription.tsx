@@ -23,7 +23,7 @@ export function SubscriptionsMenuItem() {
         isActive={isActive}
       >
         <DashboardIcon className="shrink-0 size-4 text-sidebar-icon-3" strokeWidth={2} />
-        <span>Newsfeed</span>
+        <span>资讯流</span>
       </SidebarMenuButton>
     </SidebarMenuItem>
   )

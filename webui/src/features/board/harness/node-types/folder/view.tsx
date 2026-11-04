@@ -97,7 +97,7 @@ export function FolderView({ id }: FolderViewProps) {
         <NodeTitleCaption
           nodeId={id}
           label={label}
-          placeholder="Untitled folder"
+          placeholder="未命名文件夹"
           textClassName="text-center text-sm font-handwriting text-foreground"
         />
       </div>

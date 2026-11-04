@@ -29,7 +29,7 @@ export function NodeHeader({
   emojiIcon,
   onTitleEdit,
   locked,
-  placeholder = "Untitled",
+  placeholder = "未命名",
   className,
 }: NodeHeaderProps) {
   const [editing, setEditing] = useState(false)

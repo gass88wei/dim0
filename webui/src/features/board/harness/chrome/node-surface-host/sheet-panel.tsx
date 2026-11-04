@@ -288,7 +288,7 @@ export const SheetPanel = memo(function SheetPanel({
         <div
           className={`${PANEL_CLASS} items-center justify-center text-sm text-muted-foreground`}
         >
-          Loading note…
+          正在加载便签…
         </div>
       )
     }
@@ -296,9 +296,9 @@ export const SheetPanel = memo(function SheetPanel({
       <div
         className={`${PANEL_CLASS} items-center justify-center gap-3 text-sm text-muted-foreground`}
       >
-        <p>This sheet no longer exists.</p>
+        <p>这个表格已不存在。</p>
         <Button variant="outline" size="sm" onClick={onClose}>
-          Close
+          关闭
         </Button>
       </div>
     )
@@ -318,8 +318,8 @@ export const SheetPanel = memo(function SheetPanel({
             variant="ghost"
             size="icon-sm"
             onClick={handleDownloadMarkdown}
-            title="Download markdown"
-            aria-label="Download markdown"
+            title="下载 Markdown"
+            aria-label="下载 Markdown"
             disabled={!noteContent.trim()}
           >
             <DownloadIcon className="size-4" />
@@ -328,8 +328,8 @@ export const SheetPanel = memo(function SheetPanel({
             variant="ghost"
             size="icon-sm"
             onClick={onClose}
-            title="Close"
-            aria-label="Close"
+            title="关闭"
+            aria-label="关闭"
           >
             <CancelPlainIcon className="size-4" />
           </Button>
@@ -373,7 +373,7 @@ export const SheetPanel = memo(function SheetPanel({
                   }
                 }}
                 className="w-full border-0 bg-transparent px-0 py-0.5 text-3xl font-bold tracking-tight text-foreground focus:outline-none md:text-4xl"
-                placeholder="Untitled note"
+                placeholder="未命名便签"
               />
             ) : (
               <button

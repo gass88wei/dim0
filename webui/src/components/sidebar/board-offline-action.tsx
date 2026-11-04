@@ -25,8 +25,8 @@ export function BoardOfflineAction({ boardId }: { boardId: string }) {
     return (
       <SidebarMenuAction
         className="right-8 text-secondary-foreground/50 hover:bg-transparent cursor-default"
-        title="Available offline"
-        aria-label="Available offline"
+        title="可离线使用"
+        aria-label="可离线使用"
         tabIndex={-1}
       >
         <CloudCheckIcon className="size-4" strokeWidth={2} />
@@ -44,8 +44,8 @@ export function BoardOfflineAction({ boardId }: { boardId: string }) {
         e.stopPropagation()
         if (!downloading) download.mutate(boardId)
       }}
-      title={downloading ? "Downloading for offline…" : "Download for offline use"}
-      aria-label={downloading ? "Downloading for offline" : "Download for offline use"}
+      title={downloading ? "正在下载以便离线…" : "下载以便离线使用"}
+      aria-label={downloading ? "正在下载以便离线" : "下载以便离线使用"}
     >
       <CloudArrowDownIcon
         className={cn("size-4", downloading && "animate-pulse")}

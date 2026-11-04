@@ -105,9 +105,9 @@ export function InstallScreen() {
     <div className="absolute inset-0 overflow-y-auto scrollbar-thin">
       <div className="mx-auto w-full max-w-5xl px-6 py-20 space-y-8">
         <div className="space-y-2">
-          <h1 className="text-2xl font-semibold tracking-tight">Install Dim0</h1>
+          <h1 className="text-2xl font-semibold tracking-tight">安装 Dim0</h1>
           <p className="max-w-2xl text-sm text-muted-foreground">
-            Add Dim0 to your home screen to use it like an app on mobile.
+            把 Dim0 添加到主屏幕，就能像 App 一样在手机上使用。
           </p>
         </div>
 
@@ -122,10 +122,12 @@ export function InstallScreen() {
           <div className="grid gap-6">
             <InstallSection
               icon={siApple}
-              title="iPhone & iPad"
+              title="iPhone 与 iPad"
               steps={[
                 <>
-                  Open{" "}
+                  在 <strong>Safari</strong>
+                  <BrandIcon icon={siSafari} />
+                  中打开{" "}
                   <a
                     href="https://app.dim0.net"
                     target="_blank"
@@ -133,33 +135,33 @@ export function InstallScreen() {
                     className="font-semibold text-foreground underline underline-offset-4"
                   >
                     app.dim0.net
-                  </a>{" "}
-                  in <strong>Safari</strong>
-                  <BrandIcon icon={siSafari} />
-                  .
+                  </a>
+                  。
                 </>,
                 <>
-                  Tap <strong>Share</strong>
+                  点击 <strong>分享</strong>
                   <InstructionIcon>
                     <ShareIcon className="size-3.5" strokeWidth={2} />
                   </InstructionIcon>
                   .
                 </>,
                 <>
-                  Choose <strong>Add to Home Screen</strong>.
+                  选择 <strong>添加到主屏幕</strong>.
                 </>,
                 <>
-                  Tap <strong>Add</strong>.
+                  点击 <strong>添加</strong>.
                 </>,
               ]}
             />
 
             <InstallSection
               icon={siAndroid}
-              title="Android"
+              title="安卓"
               steps={[
                 <>
-                  Open{" "}
+                  在 <strong>Chrome</strong>
+                  <BrandIcon icon={siGooglechrome} />
+                  中打开{" "}
                   <a
                     href="https://app.dim0.net"
                     target="_blank"
@@ -167,23 +169,21 @@ export function InstallScreen() {
                     className="font-semibold text-foreground underline underline-offset-4"
                   >
                     app.dim0.net
-                  </a>{" "}
-                  in <strong>Chrome</strong>
-                  <BrandIcon icon={siGooglechrome} />
-                  .
+                  </a>
+                  。
                 </>,
                 <>
-                  Tap the browser <strong>menu</strong>
+                  点击浏览器 <strong>菜单</strong>
                   <InstructionIcon>
                     <SidebarMenuIcon className="size-3.5" strokeWidth={2} />
                   </InstructionIcon>
                   .
                 </>,
                 <>
-                  Choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.
+                  选择 <strong>安装应用</strong>或<strong>添加到主屏幕</strong>.
                 </>,
                 <>
-                  Tap <strong>Install</strong>.
+                  点击 <strong>安装</strong>.
                 </>,
               ]}
             />

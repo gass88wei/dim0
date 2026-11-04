@@ -49,8 +49,8 @@ export function LocalBoardCard({
     >
       <button
         type="button"
-        aria-label="Delete board"
-        title="Delete board"
+        aria-label="删除画布"
+        title="删除画布"
         className="absolute right-2 top-2 z-10 hidden rounded-md bg-background/80 p-1 text-muted-foreground shadow-sm hover:text-destructive group-hover:block"
         onClick={(e) => {
           e.stopPropagation()
@@ -63,8 +63,8 @@ export function LocalBoardCard({
       {onEnableSync && (
         <button
           type="button"
-          aria-label="Enable sync"
-          title="Enable sync — back up + share this board"
+          aria-label="启用同步"
+          title="启用同步 —— 备份并分享这块画布"
           disabled={syncing}
           className="absolute left-2 top-2 z-10 hidden items-center gap-1 rounded-md bg-background/80 px-1.5 py-1 text-xs text-muted-foreground shadow-sm hover:text-secondary-foreground disabled:opacity-60 group-hover:flex"
           onClick={(e) => {
@@ -111,7 +111,7 @@ export function LocalBoardCard({
               e.stopPropagation()
               setEditing(true)
             }}
-            title="Double-click to rename"
+            title="双击重命名"
           >
             {board.title || UNTITLED_LABEL}
           </h4>
@@ -151,7 +151,7 @@ export function NewLocalBoardCard({ onClick }: { onClick: () => void }) {
       onClick={onClick}
     >
       <AddIcon className="shrink-0 size-6 text-secondary-foreground" strokeWidth={2} />
-      <span className="font-medium text-sm text-secondary-foreground">New Board</span>
+      <span className="font-medium text-sm text-secondary-foreground">新建画布</span>
     </div>
   )
 }

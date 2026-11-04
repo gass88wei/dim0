@@ -19,7 +19,7 @@ const asString = (value: unknown): string => (typeof value === "string" ? value 
 const describe = (req: ToolConfirmRequest): { title: string; hint: string; preview: string; Icon: typeof GlobeIcon } => {
   if (req.name === "fetch") {
     return {
-      title: "Allow the assistant to fetch a web page?",
+      title: "允许助手抓取网页？",
       hint: "It will send this request from your session. Only allow URLs you trust — a page or document on your board could try to smuggle your data into one.",
       preview: asString(req.args.url),
       Icon: GlobeIcon,
@@ -27,14 +27,14 @@ const describe = (req: ToolConfirmRequest): { title: string; hint: string; previ
   }
   if (req.name === "web_search") {
     return {
-      title: "Allow the assistant to search the web?",
+      title: "允许助手联网搜索？",
       hint: "It will send this query to a search provider. Content on your board could try to steer the query — check it says what you expect.",
       preview: asString(req.args.query),
       Icon: BrowserSearchIcon,
     }
   }
   return {
-    title: "Allow the assistant to run this code?",
+    title: "允许助手运行这段代码？",
     hint: "It runs in a sandbox, but only allow code you understand — content on your board could try to make it exfiltrate data.",
     preview: asString(req.args.code),
     Icon: CodeInterpreterIcon,
@@ -73,11 +73,11 @@ export const ToolConfirmDialog = () => {
           </pre>
         )}
         <AlertDialogFooter>
-          <AlertDialogCancel onClick={() => resolve("deny")}>Don't allow</AlertDialogCancel>
+          <AlertDialogCancel onClick={() => resolve("deny")}>不允许</AlertDialogCancel>
           {/* "Allow once" gates the next call again; "Allow for this request"
               auto-approves further calls to this tool for the rest of the run. */}
-          <Button variant="outline" onClick={() => resolve("once")}>Allow once</Button>
-          <Button onClick={() => resolve("always")}>Allow for this request</Button>
+          <Button variant="outline" onClick={() => resolve("once")}>仅允许一次</Button>
+          <Button onClick={() => resolve("always")}>本次请求允许</Button>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

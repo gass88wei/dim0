@@ -49,7 +49,7 @@ export function PresentationControls() {
   return (
     <div
       role="toolbar"
-      aria-label="Presentation controls"
+      aria-label="演示控制"
       className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-lg border border-border bg-sidebar/90 px-3 py-2 shadow-lg backdrop-blur-md [.tauri-webkit_&]:backdrop-blur-none"
     >
       <Button
@@ -57,8 +57,8 @@ export function PresentationControls() {
         variant="ghost"
         disabled={!canPrev}
         onClick={() => go(-1)}
-        title="Previous slide"
-        aria-label="Previous slide"
+        title="上一页"
+        aria-label="上一页"
       >
         <ChevronLeftIcon className="size-4" />
       </Button>
@@ -67,8 +67,8 @@ export function PresentationControls() {
         variant="ghost"
         disabled={!canNext}
         onClick={() => go(1)}
-        title="Next slide"
-        aria-label="Next slide"
+        title="下一页"
+        aria-label="下一页"
       >
         <ChevronRightIcon className="size-4" />
       </Button>
@@ -76,8 +76,8 @@ export function PresentationControls() {
         size="icon"
         variant="destructive"
         onClick={handleStop}
-        title="Stop presenting"
-        aria-label="Stop presenting"
+        title="结束演示"
+        aria-label="结束演示"
       >
         <StopPresentationIcon className="size-4" />
       </Button>

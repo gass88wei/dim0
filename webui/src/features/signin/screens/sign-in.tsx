@@ -90,11 +90,11 @@ export function SigninPage() {
       <Card className="bg-card text-card-foreground border border-border shadow-xl">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl flex flex-col items-center justify-center gap-2">
-            <img src="/dim0.svg" alt="Dim0 Logo" className="h-12 w-12 aspect-square object-contain" />
-            <span className="text-muted-foreground">Welcome back!</span>
+            <img src="/dim0.svg" alt="Dim0 标志" className="h-12 w-12 aspect-square object-contain" />
+            <span className="text-muted-foreground">欢迎回来！</span>
           </CardTitle>
           <CardDescription className="text-muted-foreground">
-            Sign in to continue to your workspace
+            登录后继续进入你的工作区
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -109,7 +109,7 @@ export function SigninPage() {
             {showLocalSignin ? (
               <>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">邮箱</Label>
                   <div className="relative">
                     <Input
                       id="email"
@@ -127,7 +127,7 @@ export function SigninPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">密码</Label>
                   <div className="relative">
                     <PasswordInput
                       id="password"
@@ -152,7 +152,7 @@ export function SigninPage() {
                   {localSigninMutation.isPending ? (
                     <span className="inline-flex items-center gap-2">
                       <Loader2Icon className="h-4 w-4 animate-spin" />
-                      Signing in…
+                      正在登录…
                     </span>
                   ) : (
                     "Sign in"
@@ -183,12 +183,12 @@ export function SigninPage() {
                   {googleRedirecting ? (
                     <span className="inline-flex items-center gap-2">
                       <Loader2Icon className="h-4 w-4 animate-spin" />
-                      Redirecting to Google…
+                      正在跳转到 Google…
                     </span>
                   ) : (
                     <span className="inline-flex items-center gap-2">
                       <Google.Color size={18} />
-                      Continue with Google
+                      使用 Google 继续
                     </span>
                   )}
                 </Button>
@@ -210,24 +210,24 @@ export function SigninPage() {
                   {desktopGoogleMutation.isPending ? (
                     <span className="inline-flex items-center gap-2">
                       <Loader2Icon className="h-4 w-4 animate-spin" />
-                      Continue in your browser…
+                      请在弹出的浏览器中继续…
                     </span>
                   ) : (
                     <span className="inline-flex items-center gap-2">
                       <Google.Color size={18} />
-                      Continue with Google
+                      使用 Google 继续
                     </span>
                   )}
                 </Button>
                 <p className="text-center text-xs text-muted-foreground">
-                  Opens your browser to sign in, then returns here.
+                  会打开浏览器登录，完成后回到这里。
                 </p>
               </div>
             ) : null}
 
             {!authMethodsQuery.isLoading && !showLocalSignin && !showGoogleWeb && !showGoogleDesktop ? (
               <p className="text-sm text-destructive">
-                No sign-in methods are currently available.
+                当前没有可用的登录方式。
               </p>
             ) : null}
 
@@ -245,7 +245,7 @@ export function SigninPage() {
                 rel="noreferrer"
                 className="underline underline-offset-2"
               >
-                Terms
+                服务条款
               </a>{" "}
               and{" "}
               <a
@@ -254,7 +254,7 @@ export function SigninPage() {
                 rel="noreferrer"
                 className="underline underline-offset-2"
               >
-                Privacy Policy
+                隐私政策
               </a>
               .
             </p>
@@ -263,11 +263,11 @@ export function SigninPage() {
               <span className="text-muted-foreground">
                 Don’t have an account?{" "}
                 <Link to="/signup" className="font-medium underline">
-                  Create one
+                  创建一个
                 </Link>
               </span>
               <Link to="/forgot-password" className="text-muted-foreground underline">
-                Forgot password?
+                忘记密码？
               </Link>
             </div>
 

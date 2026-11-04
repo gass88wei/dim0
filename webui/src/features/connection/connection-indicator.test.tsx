@@ -46,6 +46,6 @@ describe("ConnectionIndicator", () => {
     state.status = "offline"
     render()
     expect(badge()).not.toBeNull()
-    expect(container.textContent).toContain("Offline")
+    expect(container.textContent).toContain("离线")
   })
 })

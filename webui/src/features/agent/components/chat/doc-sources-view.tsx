@@ -43,12 +43,12 @@ const DocSourceItem = ({ source, anchorId }: { source: DocSource; anchorId: stri
         <button
           type="button"
           onClick={locate}
-          title="Find on board"
-          aria-label={`Find "${source.docTitle || "Document"}" on board`}
+          title="在画布中查找"
+          aria-label={`Find "${source.docTitle || "文档"}" on board`}
           className="flex min-w-0 flex-1 cursor-pointer items-center gap-2 text-left hover:text-secondary-foreground"
         >
           <DocumentFileIcon className="size-3.5 shrink-0 text-primary" strokeWidth={2} />
-          <span className="truncate text-primary">{source.docTitle || "Document"}</span>
+          <span className="truncate text-primary">{source.docTitle || "文档"}</span>
         </button>
         <span className="shrink-0 text-muted-foreground">
           {source.passages.length} passage{source.passages.length === 1 ? "" : "s"}
@@ -56,7 +56,7 @@ const DocSourceItem = ({ source, anchorId }: { source: DocSource; anchorId: stri
         {source.passages.length > 0 && (
           <button
             type="button"
-            aria-label={open ? "Hide passages" : "Show passages"}
+            aria-label={open ? "隐藏段落" : "显示段落"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
             className="shrink-0 rounded p-0.5 text-muted-foreground hover:text-secondary-foreground"
@@ -91,7 +91,7 @@ export const DocSourcesView = ({ sources, messageId }: { sources: DocSource[]; m
     <div className="mt-2 min-w-0 space-y-1">
       <div className="ml-1 flex items-center gap-1 text-xs font-mono text-muted-foreground">
         <DocumentFileIcon className="size-4 shrink-0 text-primary" strokeWidth={2} />
-        <span className="text-primary">Documents</span>
+        <span className="text-primary">文档</span>
       </div>
       {sources.map((s) => (
         <DocSourceItem key={s.docId} source={s} anchorId={docAnchorId(messageId, s.docId)} />

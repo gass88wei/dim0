@@ -716,7 +716,7 @@ function SlidesSheet() {
         className="w-[360px] max-w-[92vw] border-l border-border bg-sidebar p-0 text-sidebar-foreground"
       >
         <SheetHeader className="sr-only">
-          <SheetTitle>Slides</SheetTitle>
+          <SheetTitle>幻灯片</SheetTitle>
         </SheetHeader>
         <SlidesPanel />
       </SheetContent>

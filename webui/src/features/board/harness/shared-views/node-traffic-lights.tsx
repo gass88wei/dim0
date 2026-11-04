@@ -75,7 +75,7 @@ export function NodeTrafficLights({
     <>
     <div
       {...dragHandleProps}
-      title="Drag to move · click to select"
+      title="拖动移动 · 单击选择"
       className={cn(
         "pointer-events-auto absolute inset-x-0 top-0 z-30",
         "flex h-10 items-center px-3",
@@ -92,8 +92,8 @@ export function NodeTrafficLights({
             handleDelete()
           }}
           onDoubleClick={(e) => e.stopPropagation()}
-          aria-label="Delete"
-          title="Delete"
+          aria-label="删除"
+          title="删除"
           className="group/dot flex size-5 cursor-pointer items-center justify-center"
         >
           <span
@@ -137,8 +137,8 @@ export function NodeTrafficLights({
             onExpand()
           }}
           onDoubleClick={(e) => e.stopPropagation()}
-          aria-label="Open"
-          title="Open"
+          aria-label="打开"
+          title="打开"
           className="group/dot flex size-5 cursor-pointer items-center justify-center"
         >
           <span
@@ -166,14 +166,14 @@ export function NodeTrafficLights({
             <AlertDialogDescription>{confirmDelete.description}</AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>取消</AlertDialogCancel>
             <AlertDialogAction
               onClick={() => {
                 setConfirming(false)
                 onDelete?.()
               }}
             >
-              Delete
+              删除
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

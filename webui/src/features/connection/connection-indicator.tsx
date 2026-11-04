@@ -17,11 +17,11 @@ export const ConnectionIndicator = () => {
     <span
       role="status"
       aria-live="polite"
-      title="You're offline — changes sync once the connection returns"
+      title="当前离线 —— 恢复连接后会自动同步修改"
       className="inline-flex items-center gap-1.5 rounded-full bg-destructive/10 px-2 py-1 text-xs font-medium text-destructive"
     >
       <WifiSlashIcon className="size-4" strokeWidth={2} />
-      <span className="hidden sm:inline">Offline</span>
+      <span className="hidden sm:inline">离线</span>
     </span>
   )
 }

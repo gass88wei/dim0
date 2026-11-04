@@ -27,10 +27,10 @@ export function TocBlockView({ editor }: NodeViewProps) {
       className="toc-block"
       contentEditable={false}
     >
-      <p className="toc-block-title">On this page</p>
+      <p className="toc-block-title">本页内容</p>
       {headings.length === 0 ? (
         <p className="toc-block-empty">
-          No headings yet — add an H1, H2, or H3 to populate.
+          还没有标题 —— 添加一级、二级或三级标题即可显示。
         </p>
       ) : (
         <ul className="toc-block-list">

@@ -31,13 +31,13 @@ export type AiSparkRunParams = {
 }
 
 const defaultActions: AiSparkAction[] = [
-  { key: "summarize", label: "Write a summary", request: "Write a concise summary." },
-  { key: "mapify", label: "Mapify (generate mindmap)", request: "Generate a mindmap capturing the main ideas and relationships." },
-  { key: "schemify", label: "Schemify (generate schema)", request: "Generate a structured schema of entities and relationships." },
-  { key: "quizify", label: "Quizify (MCQ exercises)", request: "Generate multiple-choice exercises grouped by theme." },
-  { key: "drawify", label: "Draw (beta)", request: "Draw a clean diagram with clear layout and spacing." },
-  { key: "translate", label: "Translate", request: "Translate the input to the target language." },
-  { key: "explain", label: "Explain (more detail)", request: "Explain the content in more detail with clear, step-by-step reasoning." },
+  { key: "summarize", label: "生成摘要", request: "Write a concise summary." },
+  { key: "mapify", label: "生成思维导图", request: "Generate a mindmap capturing the main ideas and relationships." },
+  { key: "schemify", label: "生成结构图", request: "Generate a structured schema of entities and relationships." },
+  { key: "quizify", label: "生成测验题", request: "Generate multiple-choice exercises grouped by theme." },
+  { key: "drawify", label: "绘制（测试版）", request: "Draw a clean diagram with clear layout and spacing." },
+  { key: "translate", label: "翻译", request: "Translate the input to the target language." },
+  { key: "explain", label: "解释（更详细）", request: "Explain the content in more detail with clear, step-by-step reasoning." },
 ]
 
 export const useAiSparkActions = () => {

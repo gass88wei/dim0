@@ -70,12 +70,12 @@ function TBtn({
 }
 
 const STYLES = [
-  { label: "Paragraph", key: "paragraph", action: (e: Editor) => e.chain().focus().setParagraph().run() },
-  { label: "Heading 1", key: "h1", action: (e: Editor) => e.chain().focus().toggleHeading({ level: 1 }).run() },
-  { label: "Heading 2", key: "h2", action: (e: Editor) => e.chain().focus().toggleHeading({ level: 2 }).run() },
-  { label: "Heading 3", key: "h3", action: (e: Editor) => e.chain().focus().toggleHeading({ level: 3 }).run() },
-  { label: "Code block", key: "code", action: (e: Editor) => e.chain().focus().toggleCodeBlock().run() },
-  { label: "Quote", key: "quote", action: (e: Editor) => e.chain().focus().toggleBlockquote().run() },
+  { label: "正文", key: "paragraph", action: (e: Editor) => e.chain().focus().setParagraph().run() },
+  { label: "一级标题", key: "h1", action: (e: Editor) => e.chain().focus().toggleHeading({ level: 1 }).run() },
+  { label: "二级标题", key: "h2", action: (e: Editor) => e.chain().focus().toggleHeading({ level: 2 }).run() },
+  { label: "三级标题", key: "h3", action: (e: Editor) => e.chain().focus().toggleHeading({ level: 3 }).run() },
+  { label: "代码块", key: "code", action: (e: Editor) => e.chain().focus().toggleCodeBlock().run() },
+  { label: "引用", key: "quote", action: (e: Editor) => e.chain().focus().toggleBlockquote().run() },
 ] as const
 
 function currentStyle(editor: Editor): string {
@@ -114,14 +114,14 @@ export function Toolbar({ editor }: Props) {
     >
       {/* ── undo / redo ──────────────────────────────────────── */}
       <TBtn
-        tooltip="Undo (Ctrl+Z)"
+        tooltip="撤销 (Ctrl+Z)"
         disabled={!s.canUndo}
         onClick={() => editor.commands.undo()}
       >
         <ArrowCounterClockwise size={16} />
       </TBtn>
       <TBtn
-        tooltip="Redo (Ctrl+Y)"
+        tooltip="重做 (Ctrl+Y)"
         disabled={!s.canRedo}
         onClick={() => editor.commands.redo()}
       >
@@ -158,28 +158,28 @@ export function Toolbar({ editor }: Props) {
 
       {/* ── marks ────────────────────────────────────────────── */}
       <TBtn
-        tooltip="Bold (Ctrl+B)"
+        tooltip="加粗 (Ctrl+B)"
         active={s.isBold}
         onClick={() => editor.chain().focus().toggleBold().run()}
       >
         <TextB size={16} weight="bold" />
       </TBtn>
       <TBtn
-        tooltip="Italic (Ctrl+I)"
+        tooltip="斜体 (Ctrl+I)"
         active={s.isItalic}
         onClick={() => editor.chain().focus().toggleItalic().run()}
       >
         <TextItalic size={16} />
       </TBtn>
       <TBtn
-        tooltip="Underline (Ctrl+U)"
+        tooltip="下划线 (Ctrl+U)"
         active={s.isUnderline}
         onClick={() => editor.chain().focus().toggleUnderline().run()}
       >
         <TextUnderline size={16} />
       </TBtn>
       <TBtn
-        tooltip="Strikethrough"
+        tooltip="删除线"
         active={s.isStrike}
         onClick={() => editor.chain().focus().toggleStrike().run()}
       >
@@ -190,21 +190,21 @@ export function Toolbar({ editor }: Props) {
 
       {/* ── inline elements ───────────────────────────────────── */}
       <TBtn
-        tooltip="Highlight"
+        tooltip="高亮"
         active={s.isHighlight}
         onClick={() => editor.chain().focus().toggleHighlight().run()}
       >
         <NotePencilIcon size={16} />
       </TBtn>
       <TBtn
-        tooltip="Code (Ctrl+E)"
+        tooltip="行内代码 (Ctrl+E)"
         active={s.isCode}
         onClick={() => editor.chain().focus().toggleCode().run()}
       >
         <Code size={16} />
       </TBtn>
       <TBtn
-        tooltip="Link"
+        tooltip="链接"
         active={s.isLink}
         onClick={() => {
           if (editor.isActive("link")) {
@@ -222,21 +222,21 @@ export function Toolbar({ editor }: Props) {
 
       {/* ── lists ────────────────────────────────────────────── */}
       <TBtn
-        tooltip="Bullet list"
+        tooltip="无序列表"
         active={s.isBulletList}
         onClick={() => editor.chain().focus().toggleBulletList().run()}
       >
         <ListBullets size={16} />
       </TBtn>
       <TBtn
-        tooltip="Numbered list"
+        tooltip="有序列表"
         active={s.isOrderedList}
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
       >
         <ListNumbers size={16} />
       </TBtn>
       <TBtn
-        tooltip="Blockquote"
+        tooltip="引用块"
         active={s.isBlockquote}
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
       >

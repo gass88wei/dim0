@@ -160,7 +160,7 @@ const ListRow = memo(function ListRow({ node, index, isLast }: RowProps) {
             onClick={handleDelete}
             className="rounded-md p-1 text-foreground/55 opacity-0 transition-opacity hover:text-destructive group-hover:opacity-100"
             aria-label={`Delete ${meta.label}`}
-            title="Delete"
+            title="删除"
           >
             <DeleteIcon className="size-4" strokeWidth={2} />
           </button>
@@ -184,7 +184,7 @@ export const ListView = memo(function ListView() {
       <div className="mx-auto flex w-full max-w-[880px] flex-col gap-0 px-4 pb-8 pt-24 md:px-8 md:pb-20 md:pt-28">
         {nodes.length === 0 ? (
           <div className="py-12 text-center text-sm text-muted-foreground">
-            Nothing to list yet. Add a note, folder, or document from the toolbar.
+            暂时没有可列出的内容，可以从工具栏添加便签、文件夹或文档。
           </div>
         ) : (
           nodes.map((node, index) => (

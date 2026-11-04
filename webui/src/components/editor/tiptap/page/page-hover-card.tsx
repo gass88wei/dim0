@@ -60,11 +60,11 @@ export function PageHoverCard({ cached, fallbackTitle, children }: Props) {
             </p>
             {isDeleted ? (
               <p className="mt-1 text-xs italic text-muted-foreground">
-                No longer accessible.
+                已无法访问。
               </p>
             ) : isLoading ? (
               <p className="mt-1 text-xs italic text-muted-foreground">
-                Loading…
+                加载中…
               </p>
             ) : snippet ? (
               <p className="mt-1 text-xs text-muted-foreground line-clamp-3">
@@ -72,7 +72,7 @@ export function PageHoverCard({ cached, fallbackTitle, children }: Props) {
               </p>
             ) : (
               <p className="mt-1 text-xs italic text-muted-foreground">
-                Empty page
+                空白页面
               </p>
             )}
           </div>

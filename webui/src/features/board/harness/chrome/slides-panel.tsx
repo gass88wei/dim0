@@ -129,16 +129,16 @@ export function SlidesPanel() {
           <button
             type="button"
             onClick={() => setSlidesPanelOpen(false)}
-            aria-label="Close slides panel"
+            aria-label="关闭幻灯片面板"
             className="rounded-md p-1 transition hover:bg-secondary"
           >
             <ChevronRightIcon className="size-4 text-muted-foreground" />
           </button>
-          Slides
+          幻灯片
         </div>
         <div className="flex items-center gap-2">
           <button type="button" className={rowButtonClass} onClick={handleAddSlide}>
-            Add Slide
+            添加幻灯片
           </button>
           <button
             type="button"
@@ -147,7 +147,7 @@ export function SlidesPanel() {
             disabled={frames.length === 0}
           >
             <PresentationIcon className="mr-1 inline-block size-4" />
-            Present
+            开始演示
           </button>
         </div>
       </div>
@@ -208,7 +208,7 @@ function SortableSlideRow({ id, label, active, onClick }: SortableSlideRowProps)
     >
       <button
         type="button"
-        aria-label="Drag to reorder"
+        aria-label="拖动排序"
         className="cursor-grab rounded-md p-1 text-muted-foreground/50 transition hover:text-muted-foreground active:cursor-grabbing"
         {...attributes}
         {...listeners}

@@ -194,7 +194,7 @@ export const LinearView = memo(function LinearView() {
           >
             {nodes.length === 0 ? (
               <div className="col-span-full py-12 text-center text-sm text-muted-foreground">
-                Nothing here yet. Add a note, folder, or document from the toolbar.
+                这里还是空的，可以从工具栏添加便签、文件夹或文档。
               </div>
             ) : (
               nodes.map((node) => (

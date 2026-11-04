@@ -234,10 +234,10 @@ export function SheetView({ id }: SheetViewProps) {
             // the card still reads as a sheet at a glance.
             <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-center text-muted-foreground">
               <NotepadIcon className="size-5 shrink-0" />
-              <span className="text-xs">Sheet paused</span>
+              <span className="text-xs">表格已暂停</span>
             </div>
           ) : (
-            <span className="italic text-muted-foreground">Empty sheet</span>
+            <span className="italic text-muted-foreground">空白表格</span>
           )}
         </div>
 
@@ -267,7 +267,7 @@ export function SheetView({ id }: SheetViewProps) {
         <NodeTitleCaption
           nodeId={id}
           label={label}
-          placeholder="Untitled"
+          placeholder="未命名"
           textClassName="text-center text-sm font-handwriting text-foreground"
         />
       </div>

@@ -94,14 +94,14 @@ export const ModelChoiceMenu = ({ display = "icon" }: ModelChoiceMenuProps) => {
             </SelectTrigger>
           </TooltipTrigger>
         </div>
-        <TooltipContent>Core LLM</TooltipContent>
+        <TooltipContent>主力模型</TooltipContent>
       </Tooltip>
 
       <SelectContent side="top">
         <div className="max-h-[300px] overflow-y-auto scrollbar-thin">
           <SelectGroup>
             <SelectLabel className="text-[11px] uppercase tracking-wide text-muted-foreground">
-              Models
+              模型
             </SelectLabel>
           </SelectGroup>
 

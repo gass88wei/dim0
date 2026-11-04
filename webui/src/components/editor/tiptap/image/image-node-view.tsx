@@ -48,9 +48,9 @@ export function ImageNodeView({ node }: NodeViewProps) {
       {resolved ? (
         <img src={resolved} alt={alt} className="editor-image" draggable={false} />
       ) : error ? (
-        <span className="editor-image-fallback">Failed to load image</span>
+        <span className="editor-image-fallback">图片加载失败</span>
       ) : (
-        <span className="editor-image-fallback">Loading image…</span>
+        <span className="editor-image-fallback">正在加载图片…</span>
       )}
     </NodeViewWrapper>
   )

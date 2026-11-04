@@ -181,7 +181,7 @@ export function NewsfeedsView() {
                 <NewsfeedGrid annotations={annotations} viewMode={viewMode} />
               ) : (
                 <div className='text-center text-sm text-muted-foreground py-8'>
-                  No links in this newsfeed
+                  这个资讯流里没有链接
                 </div>
               )}
             </div>
@@ -195,7 +195,7 @@ export function NewsfeedsView() {
           }
 
           {!feedsQuery.isLoading && fused.length === 0 && (
-            <div className='text-center text-sm text-muted-foreground'>No newsletters yet</div>
+            <div className='text-center text-sm text-muted-foreground'>还没有资讯订阅</div>
           )}
         </div>
       </div>

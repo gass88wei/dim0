@@ -178,7 +178,7 @@ describe("review round 2 fixes", () => {
 describe("failure handling", () => {
   it("shows an error card for a compile error", () => {
     render(<AppletRenderer source={`<Widget><Nope/></Widget>`} />)
-    expect(screen.getByText("Applet error")).toBeTruthy()
+    expect(screen.getByText("小程序块出错")).toBeTruthy()
     expect(screen.getByText(/unknown component/)).toBeTruthy()
   })
 

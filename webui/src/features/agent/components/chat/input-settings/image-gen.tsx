@@ -47,7 +47,7 @@ export const ImageGenMenu = () => {
             disabled={!isAvailable}
           >
             <ImageGenerationIcon className={iconClass} strokeWidth={2} />
-            <span className="text-xs">Image generation</span>
+            <span className="text-xs">图像生成</span>
           </button>
         </TooltipTrigger>
       </div>

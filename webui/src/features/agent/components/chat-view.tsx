@@ -71,20 +71,20 @@ const HistoryList = ({
               className="rounded-md border border-border shadow-sm bg-accent hover:bg-background transition-colors"
             >
               <ChatHistoryIcon className="size-4" strokeWidth={2} />
-              <span className="sr-only">Open chat history</span>
+              <span className="sr-only">打开对话历史</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" className="w-72 max-h-80 overflow-y-auto scrollbar-thin">
             <div className="px-2 py-1.5 text-xs font-medium text-muted-foreground uppercase tracking-wide flex flex-row items-center gap-0">
               <ClockIcon className="size-4 mr-2 inline-block" strokeWidth={2} />
-              <span>Chat History</span>
+              <span>对话历史</span>
             </div>
             <DropdownMenuItem
               onSelect={onNewChat}
               className="text-sm font-medium text-primary cursor-pointer flex flex-row items-center gap-0"
             >
               <AddIcon className="size-4 mr-2" strokeWidth={2} />
-              <span>Create new chat</span>
+              <span>新建对话</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             {chats.length ? (
@@ -111,7 +111,7 @@ const HistoryList = ({
               })
             ) : (
               <div className="px-4 py-8 text-center text-sm text-muted-foreground">
-                No chats yet.
+                还没有对话。
               </div>
             )}
           </DropdownMenuContent>
@@ -125,11 +125,11 @@ const HistoryList = ({
       <div className="flex items-center justify-between mb-2">
         <div className="text-sm font-medium text-muted-foreground flex flex-row items-center gap-0">
           <ClockIcon className="size-4 mr-2 inline-block" strokeWidth={2} />
-          <span>Chat History</span>
+          <span>对话历史</span>
         </div>
         <Button variant="ghost" size="sm" onClick={onNewChat} className="flex flex-row items-center gap-0">
           <ChatNewIcon className="size-4 mr-2" strokeWidth={2} />
-          <span>New Chat</span>
+          <span>新建对话</span>
         </Button>
       </div>
       {chats.length ? (
@@ -157,7 +157,7 @@ const HistoryList = ({
         </div>
       ) : (
         <div className="text-sm text-muted-foreground/80 rounded-md border border-dashed border-border px-4 py-6 text-center">
-          No chats yet. Start a new one below.
+          还没有对话，在下面新建一个。
         </div>
       )}
     </div>
@@ -291,8 +291,8 @@ const ChatBody = ({
           size="icon"
           className="rounded-md border border-border shadow-sm bg-accent hover:bg-background transition-colors"
           onClick={handleNewChat}
-          aria-label="Create new chat"
-          title="Create new chat"
+          aria-label="新建对话"
+          title="新建对话"
         >
           <ChatNewIcon className="size-4" strokeWidth={2} />
         </Button>

@@ -141,11 +141,11 @@ export const useLocalDocUpload = (boardId: string): LocalDocUpload => {
           <AlertDialogHeader>
             <AlertDialogTitle>Replace “{override?.name}”?</AlertDialogTitle>
             <AlertDialogDescription>
-              A document with this name is already on this board. Uploading will replace its contents.
+              这块画布上已有同名文档，上传会覆盖其内容。
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={() => setOverride(null)}>Cancel</AlertDialogCancel>
+            <AlertDialogCancel onClick={() => setOverride(null)}>取消</AlertDialogCancel>
             <AlertDialogAction
               onClick={() => {
                 const file = override
@@ -153,7 +153,7 @@ export const useLocalDocUpload = (boardId: string): LocalDocUpload => {
                 if (file) void ingest(file)
               }}
             >
-              Replace
+              替换
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

@@ -12,7 +12,7 @@ const Impl = lazy(() => import("./applet-chart-impl").then((m) => ({ default: m.
 
 /** The applet `<Chart>` component (registered in the applet renderer). */
 export function AppletChart(props: AppletChartProps) {
-  const fallback = <div style={{ width: "100%", height: props.height ?? 220 }} aria-label="Loading chart" />
+  const fallback = <div style={{ width: "100%", height: props.height ?? 220 }} aria-label="正在加载图表" />
   return (
     <Suspense fallback={fallback}>
       <Impl {...props} />

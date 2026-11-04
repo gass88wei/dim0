@@ -102,7 +102,7 @@ export function BlockHandle({ editor }: { editor: Editor }) {
         {/* + : add new paragraph below this block */}
         <button
           type="button"
-          title="Add block below"
+          title="在下方添加块"
           className="block-handle-btn"
           onMouseDown={(e) => e.preventDefault()}
           onClick={addBlockBelow}
@@ -115,7 +115,7 @@ export function BlockHandle({ editor }: { editor: Editor }) {
           <PopoverAnchor asChild>
             <button
               type="button"
-              title="Drag or click for options"
+              title="拖动或点击以展开选项"
               className="block-handle-btn block-drag-btn"
               onClick={() => setMenuOpen((o) => !o)}
             >
@@ -131,12 +131,12 @@ export function BlockHandle({ editor }: { editor: Editor }) {
           >
             <MenuItem onClick={duplicateBlock}>
               <CopySimple size={14} />
-              Duplicate
+              创建副本
             </MenuItem>
             <div className="my-1 h-px bg-border" />
             <MenuItem danger onClick={deleteBlock}>
               <Trash size={14} />
-              Delete
+              删除
             </MenuItem>
           </PopoverContent>
         </Popover>

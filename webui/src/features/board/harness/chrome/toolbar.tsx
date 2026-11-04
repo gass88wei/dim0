@@ -62,16 +62,16 @@ type ShapeTool = {
  * `convert/node-type.ts` for the dim0↔canvas mapping).
  */
 const SHAPE_TOOLS: ReadonlyArray<ShapeTool> = [
-  { id: "rect", label: "Rectangle", icon: SquareShapeIcon, shortcut: "R" },
-  { id: "layered-rect", label: "Layered card", icon: LayerStackIcon },
-  { id: "ellipse", label: "Ellipse", icon: CircleShapeIcon, shortcut: "O" },
-  { id: "diamond", label: "Diamond", icon: DiamondShapeIcon, shortcut: "D" },
-  { id: "soft-diamond", label: "Double diamond", icon: DiamondShapeIcon },
-  { id: "layered-diamond", label: "Layered diamond", icon: LayerStackIcon },
-  { id: "layered-ellipse", label: "Layered circle", icon: CircleClusterIcon },
-  { id: "tag", label: "Tag", icon: TagIcon },
-  { id: "thought-cloud", label: "Cloud", icon: WeatherCloudIcon },
-  { id: "capsule", label: "Capsule", icon: TagIcon },
+  { id: "rect", label: "矩形", icon: SquareShapeIcon, shortcut: "R" },
+  { id: "layered-rect", label: "层叠卡片", icon: LayerStackIcon },
+  { id: "ellipse", label: "椭圆", icon: CircleShapeIcon, shortcut: "O" },
+  { id: "diamond", label: "菱形", icon: DiamondShapeIcon, shortcut: "D" },
+  { id: "soft-diamond", label: "双菱形", icon: DiamondShapeIcon },
+  { id: "layered-diamond", label: "层叠菱形", icon: LayerStackIcon },
+  { id: "layered-ellipse", label: "层叠圆形", icon: CircleClusterIcon },
+  { id: "tag", label: "标签", icon: TagIcon },
+  { id: "thought-cloud", label: "云朵", icon: WeatherCloudIcon },
+  { id: "capsule", label: "胶囊", icon: TagIcon },
 ]
 
 
@@ -123,9 +123,9 @@ const ShortcutHint = ({ shortcut }: { shortcut: string }) => (
  * button sets `tool` on board-app-store; canvas-harness reacts to it).
  */
 const VIEW_OPTIONS = [
-  { id: "board" as const, label: "Board", icon: GraphViewIcon },
-  { id: "files" as const, label: "Files", icon: GridViewIcon },
-  { id: "list" as const, label: "List", icon: ListViewIcon },
+  { id: "board" as const, label: "画布", icon: GraphViewIcon },
+  { id: "files" as const, label: "文件", icon: GridViewIcon },
+  { id: "list" as const, label: "列表", icon: ListViewIcon },
 ]
 
 
@@ -267,7 +267,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
     <FlaredTray
       className="text-sidebar-foreground"
       role="toolbar"
-      aria-label="Board toolbar"
+      aria-label="画布工具栏"
       data-coachmark="toolbar"
     >
       <DropdownMenu open={viewMenuOpen} onOpenChange={setViewMenuOpen}>
@@ -276,7 +276,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
             <DropdownMenuTrigger asChild>
               <button
                 type="button"
-                aria-label="Change view"
+                aria-label="切换视图"
                 aria-pressed={viewMenuOpen}
                 className={viewMenuOpen ? activeClass : inactiveClass}
               >
@@ -288,7 +288,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
               </button>
             </DropdownMenuTrigger>
           </TooltipTrigger>
-          <TooltipContent side="bottom" sideOffset={10}>Change view</TooltipContent>
+          <TooltipContent side="bottom" sideOffset={10}>切换视图</TooltipContent>
         </Tooltip>
         <DropdownMenuContent align="start" side="bottom" sideOffset={8} className="min-w-[160px]">
           {VIEW_OPTIONS.map((option) => {
@@ -325,7 +325,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
           <button
             type="button"
             onClick={() => setTool("pan")}
-            aria-label="Pan"
+            aria-label="平移"
             aria-pressed={isPan}
             className={isPan ? activeClass : inactiveClass}
           >
@@ -339,7 +339,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
             </div>
           </button>
         </TooltipTrigger>
-        <TooltipContent side="bottom" sideOffset={10}>Pan</TooltipContent>
+        <TooltipContent side="bottom" sideOffset={10}>平移</TooltipContent>
       </Tooltip>
 
       <Tooltip>
@@ -347,7 +347,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
           <button
             type="button"
             onClick={() => setTool("select")}
-            aria-label="Select"
+            aria-label="选择"
             aria-pressed={isSelect}
             className={isSelect ? activeClass : inactiveClass}
           >
@@ -360,7 +360,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
             </div>
           </button>
         </TooltipTrigger>
-        <TooltipContent side="bottom" sideOffset={10}>Select</TooltipContent>
+        <TooltipContent side="bottom" sideOffset={10}>选择</TooltipContent>
       </Tooltip>
 
       <Separator orientation="vertical" className="hidden md:!h-6 md:block" />
@@ -374,7 +374,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
             <DropdownMenuTrigger asChild>
               <button
                 type="button"
-                aria-label="Add shape"
+                aria-label="添加图形"
                 className={isShape ? activeClass : inactiveClass}
               >
                 <div className="relative flex flex-col items-center gap-0.5">
@@ -388,7 +388,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
               </button>
             </DropdownMenuTrigger>
           </TooltipTrigger>
-          <TooltipContent side="bottom" sideOffset={10}>Shapes</TooltipContent>
+          <TooltipContent side="bottom" sideOffset={10}>图形</TooltipContent>
         </Tooltip>
         <DropdownMenuContent align="center" side="bottom" sideOffset={8} className="min-w-[180px]">
           {SHAPE_TOOLS.map((s) => {
@@ -413,7 +413,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
           <button
             type="button"
             onClick={() => setTool("arrow")}
-            aria-label="Connector"
+            aria-label="连线"
             aria-pressed={tool === "arrow"}
             className={tool === "arrow" ? activeClass : inactiveClass}
           >
@@ -426,7 +426,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
             </div>
           </button>
         </TooltipTrigger>
-        <TooltipContent side="bottom" sideOffset={10}>Connector</TooltipContent>
+        <TooltipContent side="bottom" sideOffset={10}>连线</TooltipContent>
       </Tooltip>
 
       <Tooltip>
@@ -434,7 +434,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
           <button
             type="button"
             onClick={() => setTool("text")}
-            aria-label="Text"
+            aria-label="文本"
             aria-pressed={tool === "text"}
             className={tool === "text" ? activeClass : inactiveClass}
           >
@@ -447,7 +447,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
             </div>
           </button>
         </TooltipTrigger>
-        <TooltipContent side="bottom" sideOffset={10}>Text</TooltipContent>
+        <TooltipContent side="bottom" sideOffset={10}>文本</TooltipContent>
       </Tooltip>
 
       <Tooltip>
@@ -455,7 +455,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
           <button
             type="button"
             onClick={() => setTool("sheet")}
-            aria-label="Note"
+            aria-label="便签"
             aria-pressed={tool === "sheet"}
             className={tool === "sheet" ? activeClass : inactiveClass}
           >
@@ -468,7 +468,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
             </div>
           </button>
         </TooltipTrigger>
-        <TooltipContent side="bottom" sideOffset={10}>Note</TooltipContent>
+        <TooltipContent side="bottom" sideOffset={10}>便签</TooltipContent>
       </Tooltip>
 
       {/*
@@ -481,7 +481,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
           <button
             type="button"
             onClick={() => setTool("ink")}
-            aria-label="Pen"
+            aria-label="画笔"
             aria-pressed={tool === "ink"}
             className={tool === "ink" ? activeClass : inactiveClass}
           >
@@ -514,7 +514,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
                 />
               ))}
               <label className="ml-auto flex size-5 cursor-pointer items-center justify-center rounded-full border border-border">
-                <span className="sr-only">Custom ink color</span>
+                <span className="sr-only">自定义笔迹颜色</span>
                 <input
                   type="color"
                   value={inkColor}
@@ -524,7 +524,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
               </label>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-xs text-muted-foreground">Width</span>
+              <span className="text-xs text-muted-foreground">宽度</span>
               <Slider
                 min={1}
                 max={32}
@@ -544,7 +544,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
           <button
             type="button"
             onClick={() => setTool("eraser")}
-            aria-label="Eraser"
+            aria-label="橡皮"
             aria-pressed={tool === "eraser"}
             className={tool === "eraser" ? activeClass : inactiveClass}
           >
@@ -557,7 +557,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
             </div>
           </button>
         </TooltipTrigger>
-        <TooltipContent side="bottom" sideOffset={10}>Eraser</TooltipContent>
+        <TooltipContent side="bottom" sideOffset={10}>橡皮</TooltipContent>
       </Tooltip>
 
       <Separator orientation="vertical" className="hidden md:!h-6 md:block" />
@@ -567,7 +567,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
           <button
             type="button"
             onClick={() => setSlidesPanelOpen(!slidesPanelOpen)}
-            aria-label="Slides"
+            aria-label="幻灯片"
             aria-pressed={slidesPanelOpen}
             className={slidesPanelOpen ? activeClass : inactiveClass}
           >
@@ -580,7 +580,7 @@ export function HarnessToolbar({ local = false }: { local?: boolean } = {}) {
             </div>
           </button>
         </TooltipTrigger>
-        <TooltipContent side="bottom" sideOffset={10}>Slides</TooltipContent>
+        <TooltipContent side="bottom" sideOffset={10}>幻灯片</TooltipContent>
       </Tooltip>
 
       <Separator orientation="vertical" className="hidden md:!h-6 md:block" />

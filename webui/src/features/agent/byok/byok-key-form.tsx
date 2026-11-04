@@ -62,7 +62,7 @@ export function ByokKeyForm({ onSaved }: { onSaved?: () => void }) {
       </div>
 
       <label className="flex flex-col gap-1">
-        <span className="text-xs text-muted-foreground">API key</span>
+        <span className="text-xs text-muted-foreground">API 密钥</span>
         <input
           type="password"
           value={apiKey}
@@ -73,7 +73,7 @@ export function ByokKeyForm({ onSaved }: { onSaved?: () => void }) {
       </label>
 
       <label className="flex flex-col gap-1">
-        <span className="text-xs text-muted-foreground">Model</span>
+        <span className="text-xs text-muted-foreground">模型</span>
         <input
           value={model}
           onChange={(e) => setModel(e.target.value)}
@@ -88,7 +88,7 @@ export function ByokKeyForm({ onSaved }: { onSaved?: () => void }) {
         disabled={!apiKey.trim()}
         className="rounded-lg bg-foreground px-3 py-1.5 text-sm font-medium text-background transition hover:opacity-90 disabled:opacity-40"
       >
-        Save
+        保存
       </button>
 
       <p className="text-[11px] leading-snug text-muted-foreground">

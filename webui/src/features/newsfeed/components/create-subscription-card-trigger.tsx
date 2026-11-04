@@ -27,7 +27,7 @@ export const CreateSubscriptionCardTrigger = React.forwardRef<HTMLButtonElement,
             </button>
           </TooltipTrigger>
           <TooltipContent>
-            Create New Topic
+            新建主题
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

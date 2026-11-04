@@ -54,8 +54,8 @@ export const MemoryButton = ({ boardId }: { boardId: string }) => {
       <PopoverTrigger asChild>
         <button
           type="button"
-          title="Agent memory"
-          aria-label="Agent memory"
+          title="智能体记忆"
+          aria-label="智能体记忆"
           className={cn(
             "shrink-0 rounded-lg border border-transparent p-1.5 text-muted-foreground transition-colors",
             "hover:border-border hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-foreground/30",
@@ -66,18 +66,17 @@ export const MemoryButton = ({ boardId }: { boardId: string }) => {
       </PopoverTrigger>
       <PopoverContent align="start" className="max-h-[60vh] w-80 overflow-y-auto scrollbar-thin">
         <div className="mb-2 flex items-center justify-between">
-          <span className="text-sm font-medium">Memory</span>
+          <span className="text-sm font-medium">记忆</span>
           {loaded && <span className="font-mono text-xs text-muted-foreground/70">{total}</span>}
         </div>
         {loaded && total === 0 ? (
           <p className="text-xs text-muted-foreground">
-            Nothing saved yet. The agent remembers durable facts here as you work — stable preferences, decisions, and what
-            this board is about.
+            还没有保存内容。使用过程中助手会把长期有效的信息记在这里 —— 稳定的偏好、决定，以及这块画布的主题。
           </p>
         ) : (
           <>
-            <MemoryGroup label="This board" records={board} />
-            <MemoryGroup label="Global" records={global} />
+            <MemoryGroup label="这块画布" records={board} />
+            <MemoryGroup label="全局" records={global} />
           </>
         )}
       </PopoverContent>

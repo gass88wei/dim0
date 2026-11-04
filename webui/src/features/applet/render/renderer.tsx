@@ -75,14 +75,14 @@ export function AppletRenderer({ source, initialState, onPersist, className }: A
 function ErrorCard({ message, line, onRetry }: { message: string; line?: number; onRetry?: () => void }) {
   return (
     <div className="rounded-md border border-destructive/40 bg-destructive/5 p-3 text-sm text-destructive">
-      <div className="font-medium">Applet error</div>
+      <div className="font-medium">小程序块出错</div>
       <div className="mt-0.5 text-xs opacity-90">
         {message}
         {line ? ` (line ${line})` : ""}
       </div>
       {onRetry ? (
         <button type="button" onClick={onRetry} className="mt-2 rounded-md border px-2 py-0.5 text-xs hover:bg-destructive/10">
-          Retry
+          重试
         </button>
       ) : null}
     </div>

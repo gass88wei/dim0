@@ -92,7 +92,7 @@ export function TableMenu({ editor }: Props) {
     >
       {/* ── rows ──────────────────────────────────────── */}
       <TBtn
-        tooltip="Insert row above"
+        tooltip="在上方插入行"
         onClick={() => {
           editor.chain().focus().addRowBefore().run()
           normalizeBodyRows(editor)
@@ -101,7 +101,7 @@ export function TableMenu({ editor }: Props) {
         <RowsPlusTop size={15} />
       </TBtn>
       <TBtn
-        tooltip="Insert row below"
+        tooltip="在下方插入行"
         onClick={() => {
           editor.chain().focus().addRowAfter().run()
           normalizeBodyRows(editor)
@@ -110,7 +110,7 @@ export function TableMenu({ editor }: Props) {
         <RowsPlusBottom size={15} />
       </TBtn>
       <TBtn
-        tooltip="Delete row"
+        tooltip="删除行"
         danger
         onClick={() => editor.chain().focus().deleteRow().run()}
       >
@@ -121,19 +121,19 @@ export function TableMenu({ editor }: Props) {
 
       {/* ── columns ───────────────────────────────────── */}
       <TBtn
-        tooltip="Insert column left"
+        tooltip="在左侧插入列"
         onClick={() => editor.chain().focus().addColumnBefore().run()}
       >
         <ColumnsPlusLeft size={15} />
       </TBtn>
       <TBtn
-        tooltip="Insert column right"
+        tooltip="在右侧插入列"
         onClick={() => editor.chain().focus().addColumnAfter().run()}
       >
         <ColumnsPlusRight size={15} />
       </TBtn>
       <TBtn
-        tooltip="Delete column"
+        tooltip="删除列"
         danger
         onClick={() => editor.chain().focus().deleteColumn().run()}
       >
@@ -144,7 +144,7 @@ export function TableMenu({ editor }: Props) {
 
       {/* ── table ─────────────────────────────────────── */}
       <TBtn
-        tooltip="Delete table"
+        tooltip="删除表格"
         danger
         onClick={() => editor.chain().focus().deleteTable().run()}
       >

@@ -45,7 +45,7 @@ describe("NodeTrafficLights delete confirmation", () => {
     const onDelete = vi.fn()
     act(() => root.render(<NodeTrafficLights onDelete={onDelete} />))
 
-    const red = container.querySelector<HTMLButtonElement>('button[aria-label="Delete"]')
+    const red = container.querySelector<HTMLButtonElement>('button[aria-label="删除"]')
     act(() => red?.click())
 
     expect(onDelete).toHaveBeenCalledTimes(1)
@@ -56,7 +56,7 @@ describe("NodeTrafficLights delete confirmation", () => {
     const onDelete = vi.fn()
     act(() => root.render(<NodeTrafficLights onDelete={onDelete} confirmDelete={CONFIRM} />))
 
-    const red = container.querySelector<HTMLButtonElement>('button[aria-label="Delete"]')
+    const red = container.querySelector<HTMLButtonElement>('button[aria-label="删除"]')
     act(() => red?.click())
 
     expect(onDelete).not.toHaveBeenCalled()
@@ -68,8 +68,8 @@ describe("NodeTrafficLights delete confirmation", () => {
     const onDelete = vi.fn()
     act(() => root.render(<NodeTrafficLights onDelete={onDelete} confirmDelete={CONFIRM} />))
 
-    act(() => container.querySelector<HTMLButtonElement>('button[aria-label="Delete"]')?.click())
-    act(() => buttonByText("Delete")?.click()) // the dialog's confirm action
+    act(() => container.querySelector<HTMLButtonElement>('button[aria-label="删除"]')?.click())
+    act(() => buttonByText("删除")?.click()) // the dialog's confirm action
 
     expect(onDelete).toHaveBeenCalledTimes(1)
   })
@@ -79,8 +79,8 @@ describe("NodeTrafficLights delete confirmation", () => {
     const onDelete = vi.fn()
     act(() => root.render(<NodeTrafficLights onDelete={onDelete} confirmDelete={CONFIRM} />))
 
-    act(() => container.querySelector<HTMLButtonElement>('button[aria-label="Delete"]')?.click())
-    act(() => buttonByText("Cancel")?.click())
+    act(() => container.querySelector<HTMLButtonElement>('button[aria-label="删除"]')?.click())
+    act(() => buttonByText("取消")?.click())
 
     expect(onDelete).not.toHaveBeenCalled()
   })

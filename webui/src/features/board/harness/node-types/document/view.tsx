@@ -18,10 +18,10 @@ const STATUS_META: Record<
   string,
   { label: string; tone: string; icon: typeof Clock }
 > = {
-  pending: { label: "Pending", tone: "text-muted-foreground", icon: Clock },
-  processing: { label: "Processing", tone: "text-amber-600 dark:text-amber-400", icon: Clock },
-  completed: { label: "Ready", tone: "text-emerald-600 dark:text-emerald-400", icon: CheckCircle },
-  failed: { label: "Failed", tone: "text-destructive", icon: Warning },
+  pending: { label: "等待中", tone: "text-muted-foreground", icon: Clock },
+  processing: { label: "处理中", tone: "text-amber-600 dark:text-amber-400", icon: Clock },
+  completed: { label: "就绪", tone: "text-emerald-600 dark:text-emerald-400", icon: CheckCircle },
+  failed: { label: "失败", tone: "text-destructive", icon: Warning },
 }
 
 
@@ -71,7 +71,7 @@ export function DocumentView({ id }: DocumentViewProps) {
         <NodeTitleCaption
           nodeId={id}
           label={filename}
-          placeholder="Untitled file"
+          placeholder="未命名文件"
           textClassName="text-center text-sm font-handwriting text-foreground"
         />
       </div>

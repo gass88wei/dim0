@@ -48,7 +48,7 @@ export const MemorySearchChoiceMenu = ({ available = true }: { available?: boole
             disabled={!available}
           >
             <MemorySearchIcon className={iconClass} strokeWidth={2} />
-            <span className="text-xs">Memory search</span>
+            <span className="text-xs">记忆检索</span>
           </button>
         </TooltipTrigger>
       </div>

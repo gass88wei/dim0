@@ -40,19 +40,19 @@ export type ThemeMeta = {
 export const THEMES: ThemeMeta[] = [
   {
     id: "parchment",
-    label: "Parchment",
+    label: "羊皮纸",
     swatchLight: ["#f7f1e4", "#33312c", "#e4c9a8"],
     swatchDark:  ["#222121", "#d49a78", "#462d25"],
   },
   {
     id: "matcha",
-    label: "Matcha",
+    label: "抹茶",
     swatchLight: ["#f8f5ec", "#293027", "#cfe7c2"],
     swatchDark:  ["#1d241e", "#9ecd8e", "#293926"],
   },
   {
     id: "noir",
-    label: "Noir",
+    label: "黑曜",
     swatchLight: ["#f6f7f8", "#1e1f22", "#e7e8ea"],
     swatchDark:  ["#202224", "#e3e4e6", "#333437"],
   },
@@ -64,7 +64,7 @@ export const THEMES: ThemeMeta[] = [
   },
   {
     id: "tokyo-night",
-    label: "Tokyo Night",
+    label: "东京夜",
     swatchLight: ["#e1e2e7", "#2e7de9", "#cbcdd5"],
     swatchDark:  ["#1a1b26", "#7aa2f7", "#292e42"],
   },

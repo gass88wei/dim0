@@ -177,7 +177,7 @@ export function TocPanel({ editor, scrollRef }: Props) {
         )}
       >
         <p className="shrink-0 px-3 pb-1 pt-2.5 font-sans text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-          On this page
+          本页内容
         </p>
         <div className="min-h-0 flex-1 overflow-y-auto scrollbar-thin pb-2">
           {headings.map((h, i) => (

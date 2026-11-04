@@ -91,7 +91,7 @@ export const WindowControls = () => {
     // Not a drag region — these are interactive. Kept slightly inset from the
     // rounded window corner rather than flush to the edge.
     <div className="flex items-center self-stretch">
-      <ControlButton label="Minimize" onClick={() => void winRef.current?.minimize()}>
+      <ControlButton label="最小化" onClick={() => void winRef.current?.minimize()}>
         <Glyph>
           <line x1={0} y1={5} x2={10} y2={5} />
         </Glyph>
@@ -111,7 +111,7 @@ export const WindowControls = () => {
           </Glyph>
         )}
       </ControlButton>
-      <ControlButton label="Close" danger onClick={() => void winRef.current?.close()}>
+      <ControlButton label="关闭" danger onClick={() => void winRef.current?.close()}>
         <Glyph>
           <line x1={0.5} y1={0.5} x2={9.5} y2={9.5} />
           <line x1={9.5} y1={0.5} x2={0.5} y2={9.5} />

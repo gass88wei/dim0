@@ -20,11 +20,11 @@ export function SignInCta() {
       <TooltipTrigger asChild>
         <SidebarMenuButton className={CTA_CLASS} onClick={() => navigate({ to: "/signin" })}>
           <UserProfileIcon className="size-4 shrink-0" strokeWidth={2} />
-          <span>Sign in to sync &amp; share</span>
+          <span>登录以同步并分享</span>
         </SidebarMenuButton>
       </TooltipTrigger>
       <TooltipContent side="top">
-        Signing up is completely free — no credit card required
+        注册完全免费 —— 无需信用卡
       </TooltipContent>
     </Tooltip>
   )

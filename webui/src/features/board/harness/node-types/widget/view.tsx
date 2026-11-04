@@ -61,7 +61,7 @@ export function WidgetView({ id }: WidgetViewProps) {
           {html && isInView ? (
             <WidgetIframe
               html={html}
-              title="Widget"
+              title="小组件"
               className={cn(
                 "h-full w-full bg-transparent",
                 isSelected ? "pointer-events-auto" : "pointer-events-none",
@@ -85,7 +85,7 @@ export function WidgetView({ id }: WidgetViewProps) {
         <NodeTitleCaption
           nodeId={id}
           label={label}
-          placeholder="Untitled widget"
+          placeholder="未命名小组件"
           textClassName="text-center text-sm font-handwriting text-foreground"
         />
       </div>

@@ -111,11 +111,11 @@ export default function TradingWidget({
             <span className='mx-1'>•</span>
             <button className='inline-flex items-center gap-1 hover:underline'>
               <InfoIcon className='w-3 h-3' />
-              Disclaimer
+              免责声明
             </button>
           </div>
           <div className='text-xs font-mono tabular-nums flex items-center gap-2 text-muted-foreground'>
-            <span>After hours</span>
+            <span>盘后</span>
             <span className='font-medium'>
               {formatNumber(snapshot.afterHoursPrice ?? snapshot.price)} {snapshot.currency}
             </span>
@@ -200,23 +200,23 @@ export default function TradingWidget({
 
       <div className='mt-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs'>
         <div className='space-y-1'>
-          <div className='text-muted-foreground'>Open</div>
+          <div className='text-muted-foreground'>打开</div>
           <div className='font-medium font-mono tabular-nums'>{points[0]?.v?.toFixed(2)}</div>
         </div>
         <div className='space-y-1'>
-          <div className='text-muted-foreground'>High</div>
+          <div className='text-muted-foreground'>最高</div>
           <div className='font-medium font-mono tabular-nums'>
             {Math.max(...points.map((p) => p.v)).toFixed(2)}
           </div>
         </div>
         <div className='space-y-1'>
-          <div className='text-muted-foreground'>Low</div>
+          <div className='text-muted-foreground'>最低</div>
           <div className='font-medium font-mono tabular-nums'>
             {Math.min(...points.map((p) => p.v)).toFixed(2)}
           </div>
         </div>
         <div className='space-y-1'>
-          <div className='text-muted-foreground'>Prev close</div>
+          <div className='text-muted-foreground'>昨收</div>
           <div className='font-medium font-mono tabular-nums'>{snapshot.prevClose.toFixed(2)}</div>
         </div>
       </div>

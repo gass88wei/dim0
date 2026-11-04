@@ -47,8 +47,8 @@ export function SheetColorPicker({ value, onPick }: SheetColorPickerProps) {
           type="button"
           onClick={(e) => e.stopPropagation()}
           onDoubleClick={(e) => e.stopPropagation()}
-          aria-label="Background color"
-          title="Background color"
+          aria-label="背景色"
+          title="背景色"
           className={cn(
             "pointer-events-auto flex size-6 items-center justify-center rounded-full",
             "border border-border/60 bg-card/80 text-muted-foreground shadow-sm backdrop-blur",
@@ -84,7 +84,7 @@ export function SheetColorPicker({ value, onPick }: SheetColorPickerProps) {
             )}
           >
             <span className="size-4 rounded-sm border border-border/60 bg-card" />
-            Default
+            默认
           </button>
           <div className="grid grid-cols-6 gap-1">
             {SHADE_100.map((c) => (

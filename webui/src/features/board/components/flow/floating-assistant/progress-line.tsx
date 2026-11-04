@@ -126,7 +126,7 @@ export const ProgressLine = () => {
       <div className='w-full px-3 pt-3'>
         <div className='inline-flex items-center gap-1.5 rounded-full bg-secondary/40 px-3 py-1.5'>
           <span className='inline-flex items-center gap-1 font-mono text-xs font-medium text-muted-foreground'>
-            Thinking
+            思考中
             <ThinkingDots />
           </span>
         </div>

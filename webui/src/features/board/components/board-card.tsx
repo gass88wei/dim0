@@ -18,7 +18,7 @@ const CardOfflineBadge = ({ boardId }: { boardId: string }) => {
   if (offline === undefined) return null
   if (offline) {
     return (
-      <span title="Available offline" className="text-secondary-foreground/60">
+      <span title="可离线使用" className="text-secondary-foreground/60">
         <CloudCheckIcon className="size-4" strokeWidth={2} />
       </span>
     )
@@ -142,7 +142,7 @@ export const NewBoardCard = () => {
       onClick={handleClick}
     >
       <AddIcon className='shrink-0 size-6 text-secondary-foreground' strokeWidth={2} />
-      <span className='font-medium text-sm text-secondary-foreground'>New Board</span>
+      <span className='font-medium text-sm text-secondary-foreground'>新建画布</span>
     </div>
   )
 }

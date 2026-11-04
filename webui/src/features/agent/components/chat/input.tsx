@@ -219,7 +219,7 @@ export const InputBar = ({
           description: buildLimitDescription({ userPlan, retryAfter: error.retryAfter }),
         })
       } else {
-        const message = error instanceof Error ? error.message : "Could not send message."
+        const message = error instanceof Error ? error.message : "消息发送失败。"
         toast.error(message)
       }
       // Surfaced above (toast / dialog); don't rethrow — every caller is a
@@ -360,7 +360,7 @@ export const InputBar = ({
           {inboxBody}
 
           <p className="p-1.5 sm:p-2 text-center text-[11px] text-muted-foreground/80 bg-auto">
-            AI can make mistakes. Verify important details carefully.
+            AI 可能会出错，重要信息请自行核实。
           </p>
         </div>
       </div>
@@ -369,14 +369,14 @@ export const InputBar = ({
       <Dialog open={showDRDialog} onOpenChange={setShowDRDialog}>
         <DialogContent className="sm:max-w-[560px]">
           <DialogHeader>
-            <DialogTitle>Start a Deep Research in a new chat?</DialogTitle>
+            <DialogTitle>在新对话里开始深度研究？</DialogTitle>
             <DialogDescription>
-              Deep Research runs longer, may use more tools, and will be created in a <strong>separate chat</strong>. Edit your prompt below before starting.
+              深度研究耗时更长、可能调用更多工具，并会创建在一个 <strong>单独对话</strong>. Edit your prompt below before starting.
             </DialogDescription>
           </DialogHeader>
 
           <div className="grid w-full gap-2 py-2">
-            <Label htmlFor="dr-prompt">Your prompt</Label>
+            <Label htmlFor="dr-prompt">你的提示词</Label>
             <TextareaAutosize
               id="dr-prompt"
               value={input}
@@ -384,14 +384,14 @@ export const InputBar = ({
               minRows={4}
               maxRows={18}
               className="w-full resize-none rounded-md border border-border/50 shadow-sm bg-background px-3 py-2 text-base outline-none"
-              placeholder="Refine your prompt here..."
+              placeholder="在这里细化你的提示词…"
               autoFocus
             />
           </div>
 
           <DialogFooter className="gap-2 sm:gap-3">
             <Button variant="ghost" onClick={() => setShowDRDialog(false)} disabled={isSubmitting}>
-              Cancel
+              取消
             </Button>
             <Button onClick={confirmDeepResearch} disabled={isSubmitting || !input.trim()}>
               {isSubmitting ? 'Starting…' : 'Start Deep Research'}
@@ -425,7 +425,7 @@ export const InputBar = ({
 
           <DialogFooter className="gap-2 sm:gap-3">
             <Button variant="ghost" onClick={() => setLimitDialogCopy(null)}>
-              Close
+              关闭
             </Button>
             <Button
               onClick={() => {
@@ -433,7 +433,7 @@ export const InputBar = ({
                 void navigate({ to: SettingsBillingUrl })
               }}
             >
-              Upgrade
+              升级
             </Button>
           </DialogFooter>
         </DialogContent>

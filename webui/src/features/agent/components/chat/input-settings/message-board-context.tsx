@@ -28,7 +28,7 @@ export const MessageBoardContextChoiceMenu = () => {
           <button
             className={buttonClass}
             onClick={handleToggle}
-            aria-label="Toggle selected nodes context"
+            aria-label="开关所选节点的上下文"
           >
             <SelectionContextIcon className="size-4 shrink-0" strokeWidth={2} />
           </button>

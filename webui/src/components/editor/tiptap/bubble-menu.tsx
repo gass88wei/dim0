@@ -57,7 +57,7 @@ function HighlightPicker({ editor, active }: { editor: Editor; active: boolean }
       <PopoverTrigger asChild>
         <button
           type="button"
-          title="Highlight"
+          title="高亮"
           data-active={active}
           onMouseDown={(e) => e.preventDefault()}
           className={cn(
@@ -91,7 +91,7 @@ function HighlightPicker({ editor, active }: { editor: Editor; active: boolean }
         <div className="mx-0.5 h-4 w-px shrink-0 bg-border" />
         <button
           type="button"
-          title="Remove highlight"
+          title="取消高亮"
           onMouseDown={(e) => e.preventDefault()}
           onClick={() =>
             editor.chain().focus().unsetMark("highlight").run()
@@ -141,28 +141,28 @@ export function EditorBubbleMenu({ editor }: Props) {
     >
       {/* ── marks ────────────────────────────────────────────── */}
       <BBtn
-        tooltip="Bold"
+        tooltip="加粗"
         active={s.isBold}
         onClick={() => editor.chain().focus().toggleBold().run()}
       >
         <TextB size={14} weight="bold" />
       </BBtn>
       <BBtn
-        tooltip="Italic"
+        tooltip="斜体"
         active={s.isItalic}
         onClick={() => editor.chain().focus().toggleItalic().run()}
       >
         <TextItalic size={14} />
       </BBtn>
       <BBtn
-        tooltip="Underline"
+        tooltip="下划线"
         active={s.isUnderline}
         onClick={() => editor.chain().focus().toggleUnderline().run()}
       >
         <TextUnderline size={14} />
       </BBtn>
       <BBtn
-        tooltip="Strikethrough"
+        tooltip="删除线"
         active={s.isStrike}
         onClick={() => editor.chain().focus().toggleStrike().run()}
       >
@@ -173,21 +173,21 @@ export function EditorBubbleMenu({ editor }: Props) {
 
       {/* ── headings ─────────────────────────────────────────── */}
       <BBtn
-        tooltip="Heading 1"
+        tooltip="一级标题"
         active={s.isH1}
         onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
       >
         <span className="font-sans text-[11px] font-bold leading-none">H1</span>
       </BBtn>
       <BBtn
-        tooltip="Heading 2"
+        tooltip="二级标题"
         active={s.isH2}
         onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
       >
         <span className="font-sans text-[11px] font-bold leading-none">H2</span>
       </BBtn>
       <BBtn
-        tooltip="Heading 3"
+        tooltip="三级标题"
         active={s.isH3}
         onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
       >
@@ -199,21 +199,21 @@ export function EditorBubbleMenu({ editor }: Props) {
       {/* ── inline specials ───────────────────────────────────── */}
       <HighlightPicker editor={editor} active={s.isHighlight} />
       <BBtn
-        tooltip="Inline code"
+        tooltip="行内代码"
         active={s.isCode}
         onClick={() => editor.chain().focus().toggleCode().run()}
       >
         <Code size={14} />
       </BBtn>
       <BBtn
-        tooltip="Blockquote"
+        tooltip="引用块"
         active={s.isBlockquote}
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
       >
         <Quotes size={14} />
       </BBtn>
       <BBtn
-        tooltip="Link"
+        tooltip="链接"
         active={s.isLink}
         onClick={() => {
           if (editor.isActive("link")) {

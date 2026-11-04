@@ -13,7 +13,7 @@ export const HomeMenuItem = () => {
     <SidebarMenuItem>
       <SidebarMenuButton className="text-xs text-secondary-foreground font-medium transition-all" onClick={handleClick}>
         <HomeIcon className="text-xs shrink-0 text-sidebar-icon-3" strokeWidth={2} />
-        <span>Home</span>
+        <span>首页</span>
       </SidebarMenuButton>
     </SidebarMenuItem>
   )

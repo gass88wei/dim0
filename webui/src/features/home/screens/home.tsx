@@ -13,7 +13,7 @@ export const HomePage = () => {
         <div className='text-left max-w-[900px] w-full border-b border-border'>
           <h3 className="transition-all text-lg font-medium py-1 px-4 flex flex-row items-center gap-2">
             <NoteIcon className='w-5 h-5' strokeWidth={2} />
-            <span>Note Boards</span>
+            <span>便签画布</span>
           </h3>
         </div>
         <BoardsHome className="h-auto" hideTitle />

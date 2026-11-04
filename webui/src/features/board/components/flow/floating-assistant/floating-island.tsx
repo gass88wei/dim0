@@ -134,7 +134,7 @@ export const FloatingIsland = ({ boardId, onOpenFullSheet }: FloatingIslandProps
         </div>
       </div>
       <p className='text-center text-[11px] text-muted-foreground/70 px-3'>
-        AI can make mistakes. Verify important details carefully.
+        AI 可能会出错，重要信息请自行核实。
       </p>
     </div>
   )

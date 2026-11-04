@@ -46,7 +46,7 @@ const BUTTON_BASE_CLS =
 export const NodeTitleCaption = memo(function NodeTitleCaption({
   nodeId,
   label,
-  placeholder = "Untitled",
+  placeholder = "未命名",
   className,
   textClassName,
   emptyTextClassName,

@@ -56,13 +56,13 @@ export function GoogleCallbackPage() {
             replace
             className="inline-block text-sm font-medium text-primary underline underline-offset-4"
           >
-            Back to sign in
+            返回登录
           </Link>
         </div>
       ) : (
         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
           <Loader2Icon className="size-4 animate-spin" />
-          Completing sign in…
+          正在完成登录…
         </div>
       )}
     </div>

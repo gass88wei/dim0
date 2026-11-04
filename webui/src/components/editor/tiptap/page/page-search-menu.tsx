@@ -64,7 +64,7 @@ export const PageSearchMenu = forwardRef<PageSearchMenuHandle, Props>(
     if (totalItems === 0) {
       return (
         <div className="page-search-menu" onMouseDown={(e) => e.preventDefault()}>
-          <p className="page-search-empty">No pages — start typing to create one</p>
+          <p className="page-search-empty">还没有页面 —— 直接输入即可创建</p>
         </div>
       )
     }
@@ -72,7 +72,7 @@ export const PageSearchMenu = forwardRef<PageSearchMenuHandle, Props>(
     return (
       <div className="page-search-menu" onMouseDown={(e) => e.preventDefault()}>
         {items.length > 0 && (
-          <p className="page-search-section">Pages</p>
+          <p className="page-search-section">页面</p>
         )}
         {items.map((page, index) => {
           const active = index === selectedIndex
@@ -99,7 +99,7 @@ export const PageSearchMenu = forwardRef<PageSearchMenuHandle, Props>(
         {query.trim() && (
           <>
             {items.length > 0 && <div className="page-search-divider" />}
-            <p className="page-search-section">Create</p>
+            <p className="page-search-section">创建</p>
             <button
               ref={(el) => { itemRefs.current[items.length] = el }}
               type="button"

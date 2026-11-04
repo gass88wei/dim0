@@ -26,11 +26,11 @@ import { isKeylessSearchEngine, type ServiceKind } from "@/features/agent/engine
 type SectionId = "general" | "models" | "search" | "code" | "documents"
 
 const NAV: { id: SectionId; label: string; icon: ComponentType<{ className?: string }> }[] = [
-  { id: "general", label: "General", icon: ToolsMenuIcon },
-  { id: "models", label: "Model providers", icon: SparklesIcon },
-  { id: "search", label: "Web search", icon: GlobeIcon },
-  { id: "code", label: "Code interpreter", icon: CodeInterpreterIcon },
-  { id: "documents", label: "Documents", icon: DocumentFileIcon },
+  { id: "general", label: "通用", icon: ToolsMenuIcon },
+  { id: "models", label: "模型服务商", icon: SparklesIcon },
+  { id: "search", label: "联网搜索", icon: GlobeIcon },
+  { id: "code", label: "代码解释器", icon: CodeInterpreterIcon },
+  { id: "documents", label: "文档", icon: DocumentFileIcon },
 ]
 
 const SEARCH_ENGINES: { id: SearchEngine; label: string; placeholder: string }[] = [
@@ -38,7 +38,7 @@ const SEARCH_ENGINES: { id: SearchEngine; label: string; placeholder: string }[]
   { id: "tavily", label: "Tavily", placeholder: "tvly-…" },
   { id: "linkup", label: "Linkup", placeholder: "lk-…" },
   { id: "exa", label: "Exa", placeholder: "exa-…" },
-  { id: "parallel", label: "Parallel (keyless)", placeholder: "" },
+  { id: "parallel", label: "Parallel（免密钥）", placeholder: "" },
 ]
 
 const fieldClass =
@@ -89,11 +89,11 @@ export function SettingsDialog({ trigger }: { trigger: React.ReactNode }) {
     <Dialog>
       <DialogTrigger render={trigger as React.ReactElement} />
       <DialogContent className="w-[min(760px,calc(100vw-2rem))] max-w-none overflow-hidden rounded-2xl p-0">
-        <DialogTitle className="sr-only">Agent settings</DialogTitle>
+        <DialogTitle className="sr-only">智能体设置</DialogTitle>
         <div className="flex h-[min(560px,80vh)]">
           <nav className="flex w-44 shrink-0 flex-col border-r border-border bg-sidebar/60 p-2">
             <div className="px-2 pb-2 pt-1 text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
-              Settings
+              设置
             </div>
             {NAV.map(({ id, label, icon: Icon }) => {
               const kind = NAV_KIND[id]
@@ -152,7 +152,7 @@ function ForgetKeysButton() {
       disabled={!hasKeys}
       className="mt-auto rounded-lg px-2.5 py-2 text-left text-xs text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-40"
     >
-      Forget keys on this device
+      在本机忘记所有密钥
     </button>
   )
 }
@@ -200,21 +200,21 @@ function GeneralPane({ onNavigate }: { onNavigate: (s: SectionId) => void }) {
   )
 
   const tools: { kind: ServiceKind; label: string; icon: ComponentType<{ className?: string }>; section?: SectionId }[] = [
-    { kind: "search", label: "Web search", icon: GlobeIcon, section: "search" },
-    { kind: "code", label: "Code interpreter", icon: CodeInterpreterIcon, section: "code" },
-    { kind: "parse", label: "Documents", icon: DocumentFileIcon, section: "documents" },
-    { kind: "fetch", label: "Fetch", icon: LinkIcon },
+    { kind: "search", label: "联网搜索", icon: GlobeIcon, section: "search" },
+    { kind: "code", label: "代码解释器", icon: CodeInterpreterIcon, section: "code" },
+    { kind: "parse", label: "文档", icon: DocumentFileIcon, section: "documents" },
+    { kind: "fetch", label: "抓取", icon: LinkIcon },
   ]
 
   const modelUsable = resolutions.llm.mode !== "off"
 
   return (
     <div>
-      <PaneTitle title="General" hint="We use our keys by default. Add your own under each service." />
+      <PaneTitle title="通用" hint="We use our keys by default. Add your own under each service." />
 
       <div className="mb-1 flex items-center gap-2">
         <StatusDot usable={modelUsable} />
-        <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Model</span>
+        <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">模型</span>
       </div>
       <div className="rounded-lg border border-border">
         <ModelChoiceMenu display="row" />
@@ -233,7 +233,7 @@ function GeneralPane({ onNavigate }: { onNavigate: (s: SectionId) => void }) {
         </button>
       )}
 
-      <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tools</div>
+      <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">工具</div>
       <div className="divide-y divide-border/60 rounded-lg border border-border">
         {tools.map(({ kind, label, icon: Icon, section }) => {
           const mode = resolutions[kind].mode
@@ -245,11 +245,11 @@ function GeneralPane({ onNavigate }: { onNavigate: (s: SectionId) => void }) {
                 {label}
               </span>
               {mode === "keyless" ? (
-                <Chip tone="byok" label="No key needed" />
+                <Chip tone="byok" label="无需密钥" />
               ) : mode === "managed" ? (
-                <Chip tone="managed" label="Our keys" />
+                <Chip tone="managed" label="官方密钥" />
               ) : mode === "byok" ? (
-                <Chip tone="byok" label="Your key" />
+                <Chip tone="byok" label="自己的密钥" />
               ) : section ? (
                 <button
                   type="button"
@@ -259,7 +259,7 @@ function GeneralPane({ onNavigate }: { onNavigate: (s: SectionId) => void }) {
                   Set a key →
                 </button>
               ) : (
-                <span className="text-xs text-muted-foreground">Needs an account</span>
+                <span className="text-xs text-muted-foreground">需要账号</span>
               )}
             </div>
           )
@@ -287,7 +287,7 @@ function Chip({ tone, label }: { tone: "managed" | "byok"; label: string }) {
 function ProvidersPane() {
   return (
     <div>
-      <PaneTitle title="Model providers" hint="Bring your own key — sent directly to the provider, never to our servers." />
+      <PaneTitle title="模型服务商" hint="Bring your own key — sent directly to the provider, never to our servers." />
       <ByokKeyForm />
     </div>
   )
@@ -344,16 +344,16 @@ function SearchPane() {
 
   return (
     <div>
-      <PaneTitle title="Web search" hint="Pick a provider. Available ones use our keys; add your own key to enable another (relayed, never stored)." />
+      <PaneTitle title="联网搜索" hint="Pick a provider. Available ones use our keys; add your own key to enable another (relayed, never stored)." />
 
       <TrustToolRow
         tool="web_search"
-        title="Always allow web search"
-        description="Skip the confirmation prompt for web searches on this device."
+        title="始终允许联网搜索"
+        description="在这台设备上不再为联网搜索弹出确认。"
       />
       <TrustToolRow
         tool="fetch"
-        title="Always allow fetching web pages"
+        title="始终允许抓取网页"
         description="Skip the prompt when the assistant opens a URL. Only enable if you trust the pages your boards link to."
       />
 
@@ -387,8 +387,7 @@ function SearchPane() {
 
       {isKeylessSearchEngine(engine) ? (
         <p className="text-xs text-muted-foreground">
-          Free for light use, with rate limits. No search API key and no sign-in needed — this device calls
-          Parallel directly, so it also works on a local board. Model inference is configured separately.
+          轻度使用免费，有速率限制。无需搜索 API 密钥、无需登录 —— 本机直连 Parallel，因此在本地画布上也能用。模型推理单独配置。
         </p>
       ) : (
         <>
@@ -419,10 +418,10 @@ function CodePane() {
 
   return (
     <div>
-      <PaneTitle title="Code interpreter" hint="Runs in a Daytona sandbox. Add your Daytona key to run on your own account (relayed, never stored)." />
+      <PaneTitle title="代码解释器" hint="Runs in a Daytona sandbox. Add your Daytona key to run on your own account (relayed, never stored)." />
       <TrustToolRow
         tool="code_interpreter"
-        title="Always allow running code"
+        title="始终允许运行代码"
         description="Skip the confirmation prompt before the assistant runs code. It runs in a sandbox, but only enable if you understand the risk."
       />
       <div className="mb-2 flex items-center gap-2 text-xs font-medium">
@@ -453,7 +452,7 @@ function DocumentsPane() {
 
   return (
     <div>
-      <PaneTitle title="Documents" hint="PDFs are OCR'd to markdown by Mistral. Add your Mistral key to parse on your own account (relayed, never stored) — required to upload documents when signed out." />
+      <PaneTitle title="文档" hint="PDFs are OCR'd to markdown by Mistral. Add your Mistral key to parse on your own account (relayed, never stored) — required to upload documents when signed out." />
       <div className="mb-2 flex items-center gap-2 text-xs font-medium">
         <StatusDot usable={usable} />
         Mistral
@@ -481,7 +480,7 @@ function SaveButton({ disabled, onClick }: { disabled: boolean; onClick: () => v
       disabled={disabled}
       className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-sm font-medium transition hover:bg-accent disabled:opacity-40"
     >
-      Save
+      保存
     </button>
   )
 }

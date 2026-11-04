@@ -159,7 +159,7 @@ export const SaveAsNote = ({
         icon: <SuccessIcon />,
         duration: 3000,
         action: {
-          label: "Go to board",
+          label: "前往画布",
           onClick: () => {
             goToBoard(boardId)
           }
@@ -214,7 +214,7 @@ export const SaveAsNote = ({
           icon: <SuccessIcon />,
           duration: 3000,
           action: {
-            label: "Go to board",
+            label: "前往画布",
             onClick: () => {
               goToBoard(boardId)
             }
@@ -314,10 +314,10 @@ export const SaveAsNote = ({
         <DropdownMenu>
           {withTooltip(dropdownTrigger)}
           <DropdownMenuContent className="w-48">
-            <DropdownMenuLabel>Boards</DropdownMenuLabel>
+            <DropdownMenuLabel>画布</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem className="bg-accent/50" onClick={createAndLaunch}>
-              <span>Create New Board</span>
+              <span>新建画布</span>
             </DropdownMenuItem>
             {boardList?.map((board) => (
               <DropdownMenuItem key={board.uid} onClick={() => launchGeneration(board.uid)}>
@@ -330,10 +330,10 @@ export const SaveAsNote = ({
         <ContextMenu>
           {withTooltip(contextTrigger)}
           <ContextMenuContent className="w-48">
-            <ContextMenuLabel>Select a different board</ContextMenuLabel>
+            <ContextMenuLabel>选择其他画布</ContextMenuLabel>
             <ContextMenuSeparator />
             <ContextMenuItem className="bg-accent/50" onClick={createAndLaunch}>
-              <span>Create New Board</span>
+              <span>新建画布</span>
             </ContextMenuItem>
             {boardList?.map((board) => (
               <ContextMenuItem key={board.uid} onClick={() => launchGeneration(board.uid)}>

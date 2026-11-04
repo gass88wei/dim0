@@ -1,0 +1,103 @@
+name: Desktop Release (zh-CN)
+
+# Linux-only desktop build for the Chinese (zh-CN) localization fork of Dim0.
+# Produces an AppImage + .deb from `webui/src-tauri` on ubuntu-22.04 so the
+# glibc floor stays portable (Deepin 25 / Debian 12 run these fine).
+#
+# Trigger: manual (workflow_dispatch) or a `zh-v*` tag.
+# This build intentionally bakes NO remote server URL (VITE_API_URL unset):
+# the app stays fully local/BYOK, exactly like the distro package it replaces.
+on:
+  workflow_dispatch:
+  push:
+    tags: ["zh-v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: webui/package-lock.json
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: webui/src-tauri
+
+      - name: Install Tauri system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev \
+            libgtk-3-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            libssl-dev \
+            libxdo-dev \
+            patchelf
+
+      - name: Install webui dependencies
+        run: npm ci
+        working-directory: webui
+
+      - name: Type-check
+        run: npm run type-check
+        working-directory: webui
+
+      - name: Build desktop installers
+        working-directory: webui
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+        run: npm run tauri-build -- --bundles appimage,deb
+
+      - name: Verify the bundle is not an empty shell
+        working-directory: webui
+        run: |
+          set -eux
+          ls -la src-tauri/target/release/bundle/appimage/
+          ls -la src-tauri/target/release/bundle/deb/
+          test -n "$(ls -A src-tauri/target/release/bundle/appimage/*.AppImage)"
+          test -n "$(ls -A src-tauri/target/release/bundle/deb/*.deb)"
+
+      - name: Collect installers
+        uses: actions/upload-artifact@v4
+        with:
+          name: dim0-zh-linux
+          path: |
+            webui/src-tauri/target/release/bundle/appimage/*.AppImage
+            webui/src-tauri/target/release/bundle/deb/*.deb
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/zh-v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download installers
+        uses: actions/download-artifact@v4
+        with:
+          name: dim0-zh-linux
+          path: dist
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }} (zh-CN)
+          generate_release_notes: true
+          files: dist/**

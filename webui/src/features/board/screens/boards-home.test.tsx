@@ -105,11 +105,11 @@ describe("BoardsHome", () => {
     state.localBoards = [local("a"), local("b")]
     render()
     // Synced group still renders (reveals the feature), but with the CTA — no boards.
-    expect(headings()).toEqual(["On this device", "Synced"])
+    expect(headings()).toEqual(["本机", "已同步"])
     expect(count("local-card")).toBe(2)
     expect(count("new-local")).toBe(1)
     expect(count("synced-card")).toBe(0)
-    expect(container.textContent).toContain("Sync & share your boards")
+    expect(container.textContent).toContain("同步并分享你的画布")
   })
 
   it("signed in: renders both groups, deduped by id", () => {
@@ -117,7 +117,7 @@ describe("BoardsHome", () => {
     state.localBoards = [local("a"), local("shared")]
     state.syncedBoards = [synced("shared"), synced("s2")]
     render()
-    expect(headings()).toEqual(["On this device", "Synced"])
+    expect(headings()).toEqual(["本机", "已同步"])
     // "shared" is in both lists → shown once under Synced, dropped on-device.
     expect(count("local-card")).toBe(1)
     expect(count("synced-card")).toBe(2)

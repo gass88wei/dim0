@@ -34,7 +34,7 @@ export interface SlashCommand {
 export const SLASH_COMMANDS: SlashCommand[] = [
   // ── basic blocks ─────────────────────────────────────────────────────────
   {
-    title: "Text",
+    title: "文本",
     keywords: ["paragraph", "plain", "text", "p"],
     icon: TextT,
     group: "basic",
@@ -42,7 +42,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).setParagraph().run(),
   },
   {
-    title: "Heading 1",
+    title: "一级标题",
     keywords: ["h1", "heading", "title", "big"],
     icon: TextHOne,
     group: "basic",
@@ -50,7 +50,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).setHeading({ level: 1 }).run(),
   },
   {
-    title: "Heading 2",
+    title: "二级标题",
     keywords: ["h2", "heading", "subtitle"],
     icon: TextHTwo,
     group: "basic",
@@ -58,7 +58,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).setHeading({ level: 2 }).run(),
   },
   {
-    title: "Heading 3",
+    title: "三级标题",
     keywords: ["h3", "heading"],
     icon: TextHThree,
     group: "basic",
@@ -66,7 +66,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).setHeading({ level: 3 }).run(),
   },
   {
-    title: "Bullet list",
+    title: "无序列表",
     keywords: ["ul", "list", "bullets", "unordered"],
     icon: ListBullets,
     group: "basic",
@@ -74,7 +74,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).toggleBulletList().run(),
   },
   {
-    title: "Numbered list",
+    title: "有序列表",
     keywords: ["ol", "numbered", "ordered", "list"],
     icon: ListNumbers,
     group: "basic",
@@ -82,7 +82,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).toggleOrderedList().run(),
   },
   {
-    title: "Todo list",
+    title: "待办列表",
     keywords: ["todo", "task", "check", "checkbox"],
     icon: ListChecks,
     group: "basic",
@@ -90,7 +90,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).toggleTaskList().run(),
   },
   {
-    title: "Quote",
+    title: "引用",
     keywords: ["quote", "blockquote", "callout"],
     icon: Quotes,
     group: "basic",
@@ -98,7 +98,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).toggleBlockquote().run(),
   },
   {
-    title: "Toggle",
+    title: "折叠块",
     keywords: ["toggle", "details", "collapse", "expand", "disclosure"],
     icon: CaretRightIcon,
     group: "basic",
@@ -106,7 +106,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).setDetails().run(),
   },
   {
-    title: "Code block",
+    title: "代码块",
     keywords: ["code", "codeblock", "pre", "snippet"],
     icon: Code,
     group: "basic",
@@ -114,7 +114,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).setCodeBlock({ language: "plaintext" }).run(),
   },
   {
-    title: "Math block",
+    title: "公式块",
     keywords: ["math", "latex", "equation", "formula", "katex"],
     icon: MathOperationsIcon,
     group: "basic",
@@ -129,7 +129,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
     },
   },
   {
-    title: "Table",
+    title: "表格",
     keywords: ["table", "grid", "rows", "columns"],
     icon: TableIcon,
     group: "basic",
@@ -137,7 +137,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run(),
   },
   {
-    title: "Divider",
+    title: "分割线",
     keywords: ["hr", "divider", "separator", "rule", "line"],
     icon: Minus,
     group: "basic",
@@ -145,7 +145,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).setHorizontalRule().run(),
   },
   {
-    title: "Image",
+    title: "图片",
     keywords: ["image", "img", "picture", "photo", "upload"],
     icon: ImageIcon,
     group: "basic",
@@ -155,7 +155,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
     },
   },
   {
-    title: "Table of contents",
+    title: "目录",
     keywords: ["toc", "outline", "headings", "contents", "summary"],
     icon: ListDashes,
     group: "basic",
@@ -163,7 +163,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       editor.chain().focus().deleteRange(range).insertContent({ type: "tableOfContents" }).run(),
   },
   {
-    title: "Sub-page",
+    title: "子页面",
     keywords: ["subpage", "sub-page", "page", "child", "embed"],
     icon: Notepad,
     group: "basic",
@@ -181,7 +181,7 @@ export const SLASH_COMMANDS: SlashCommand[] = [
       void (async () => {
         try {
           const page = await provider.create({
-            title: "Untitled",
+            title: "未命名",
             parentId: parentNoteId,
           })
           primePageCache(page)

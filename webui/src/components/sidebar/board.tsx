@@ -63,7 +63,7 @@ export function DashboardMenuItem() {
         isActive={isActive}
       >
         <DashboardAddIcon className="shrink-0 size-4 text-sidebar-icon-2" weight={isActive ? 'fill' : undefined} strokeWidth={2} />
-        <span>Dashboard</span>
+        <span>总览</span>
       </SidebarMenuButton>
     </SidebarMenuItem>
   )
@@ -80,7 +80,7 @@ export function NewBoardItem({ onClick }: { onClick: () => void }) {
     <SidebarMenuItem>
       <SidebarMenuButton className="text-xs text-secondary-foreground font-medium transition-all" onClick={onClick}>
         <EditIcon className="text-xs shrink-0 text-sidebar-icon-1" strokeWidth={2} />
-        <span>New board</span>
+        <span>新建画布</span>
       </SidebarMenuButton>
     </SidebarMenuItem>
   )
@@ -100,7 +100,7 @@ export function NewLocalBoardItem({ onClick }: { onClick: () => void }) {
         onClick={onClick}
       >
         <EditIcon className="text-xs shrink-0 text-sidebar-icon-1" strokeWidth={2} />
-        <span>New board</span>
+        <span>新建画布</span>
       </SidebarMenuButton>
     </SidebarMenuItem>
   )
@@ -164,7 +164,7 @@ export function LocalBoardItem({
                 >
                   <span
                     role="button"
-                    aria-label={isOpen ? "Collapse board" : "Expand board"}
+                    aria-label={isOpen ? "折叠画布" : "展开画布"}
                     onClick={handleToggle}
                     className="size-4 shrink-0 grid place-items-center cursor-pointer"
                   >
@@ -186,7 +186,7 @@ export function LocalBoardItem({
             </TooltipTrigger>
             <TooltipContent side="right" align="center" className="max-w-64">
               <p className="text-xs">{boardLabel}</p>
-              <p className="mt-1 text-[10px] text-muted-foreground">On this device</p>
+              <p className="mt-1 text-[10px] text-muted-foreground">本机</p>
             </TooltipContent>
           </Tooltip>
 
@@ -197,7 +197,7 @@ export function LocalBoardItem({
               className="text-xs flex flex-row items-center"
             >
               <CloudArrowUpIcon className="mr-2 size-4" strokeWidth={2} />
-              <span>{syncing ? "Enabling sync…" : "Enable sync"}</span>
+              <span>{syncing ? "正在启用同步…" : "启用同步"}</span>
             </ContextMenuItem>
             <ContextMenuItem
               onSelect={() =>
@@ -207,15 +207,15 @@ export function LocalBoardItem({
               className="text-xs flex flex-row items-center"
             >
               <DeleteIcon className="mr-2 size-4" strokeWidth={2} />
-              <span>Delete board</span>
+              <span>删除画布</span>
             </ContextMenuItem>
           </ContextMenuContent>
 
           <CollapsibleContent>
             {isLoading && rootContents.length === 0 ? (
-              <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">Loading…</p>
+              <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">加载中…</p>
             ) : rootContents.length === 0 ? (
-              <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">Empty</p>
+              <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">空</p>
             ) : (
               <ul className="flex flex-col">
                 {rootContents.map((item) => (
@@ -248,8 +248,8 @@ export function LocalBoardItem({
           e.stopPropagation()
           onEnableSync()
         }}
-        title={syncing ? "Enabling sync…" : "Enable sync — back up + share this board"}
-        aria-label="Enable sync"
+        title={syncing ? "正在启用同步…" : "启用同步 —— 备份并分享这块画布"}
+        aria-label="启用同步"
         className={cn(
           "text-muted-foreground/50 hover:text-secondary-foreground",
           syncing && "opacity-50",
@@ -358,7 +358,7 @@ export function BoardItem({
                 >
                   <span
                     role="button"
-                    aria-label={isOpen ? "Collapse board" : "Expand board"}
+                    aria-label={isOpen ? "折叠画布" : "展开画布"}
                     onClick={handleToggle}
                     className="size-4 shrink-0 grid place-items-center cursor-pointer"
                   >
@@ -396,22 +396,22 @@ export function BoardItem({
                 className="text-xs flex flex-row items-center"
               >
                 <DeleteIcon className="mr-2 size-4" strokeWidth={2} />
-                <span>Delete Board</span>
+                <span>删除画布</span>
               </ContextMenuItem>
             </ContextMenuContent>
           )}
 
           <CollapsibleContent>
             {offlineAvailable === undefined ? (
-              <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">Loading…</p>
+              <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">加载中…</p>
             ) : !canShowTree ? (
               <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">
-                Download for offline to view contents
+                下载以便离线查看内容
               </p>
             ) : isLoadingContents && rootContents.length === 0 ? (
-              <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">Loading…</p>
+              <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">加载中…</p>
             ) : rootContents.length === 0 ? (
-              <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">Empty</p>
+              <p className="pl-7 py-1 text-[11px] italic text-muted-foreground">空</p>
             ) : (
               <ul className="flex flex-col">
                 {rootContents.map((item) => (
@@ -436,8 +436,8 @@ export function BoardItem({
       <SidebarMenuAction
         className="right-1.5 text-muted-foreground/40 hover:text-muted-foreground hover:bg-transparent"
         onClick={() => setChatsDialogOpen(true)}
-        title="View chats in this board"
-        aria-label="View chats in this board"
+        title="查看这块画布的对话"
+        aria-label="查看这块画布的对话"
       >
         <ChatHistoryIcon className="size-4" strokeWidth={2} />
       </SidebarMenuAction>

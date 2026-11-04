@@ -9,7 +9,7 @@ export type PasswordChecks = {
 
 export type PasswordStrength = {
   score: number
-  label: "Very weak" | "Weak" | "Fair" | "Good" | "Strong"
+  label: "非常弱" | "Weak" | "Fair" | "Good" | "Strong"
   checks: PasswordChecks
   isValid: boolean
 }

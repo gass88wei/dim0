@@ -93,12 +93,12 @@ export const SearchEngineChoiceMenu = () => {
           </TooltipTrigger>
         </div>
         <TooltipContent>
-          Select Web Search Engine
+          选择联网搜索引擎
         </TooltipContent>
       </Tooltip>
       <SelectContent side='top'>
         <SelectGroup className='max-h-[300px]'>
-          <SelectLabel>Select Web Search Engine</SelectLabel>
+          <SelectLabel>选择联网搜索引擎</SelectLabel>
           {
             availableWebSearchServices.map((engine) => {
               const clName = clsx(

@@ -110,7 +110,7 @@ export function CodeSandboxView({ id }: CodeSandboxViewProps) {
         <NodeTitleCaption
           nodeId={id}
           label={label}
-          placeholder="Untitled code"
+          placeholder="未命名代码"
           textClassName="text-center text-sm font-handwriting text-foreground"
         />
       </div>

@@ -207,7 +207,7 @@ export interface GetExtensionsOptions {
 
 export function getExtensions(options: GetExtensionsOptions = {}) {
   const {
-    placeholder = "Start writing…",
+    placeholder = "开始输入…",
     pageProvider = null,
     parentNoteId = null,
   } = options

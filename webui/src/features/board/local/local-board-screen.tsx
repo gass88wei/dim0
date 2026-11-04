@@ -82,7 +82,7 @@ export function LocalBoardScreen() {
           >
             {/* Radix Dialog primitive requires an accessible title for content. */}
             <SheetHeader className="sr-only">
-              <SheetTitle>Board Assistant</SheetTitle>
+              <SheetTitle>画布助手</SheetTitle>
             </SheetHeader>
             {/* Visible header — without it the top is flush to the sheet edge and
                 there's no way to close the chat (parity with CopilotSheet). */}
@@ -91,14 +91,14 @@ export function LocalBoardScreen() {
                 <div className="flex size-6 items-center justify-center rounded-md bg-gradient-to-br from-wiki-link to-secondary-foreground shadow-sm">
                   <SparklesIcon className="size-3.5 text-primary-foreground" weight="fill" />
                 </div>
-                Board Assistant
+                画布助手
               </div>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setSheetOpen(false)}
-                title="Close"
-                aria-label="Close"
+                title="关闭"
+                aria-label="关闭"
               >
                 <ArrowExpandIcon className="size-4" strokeWidth={2} />
               </Button>

@@ -56,17 +56,17 @@ export function BoardsHome({
     <div className={cn("w-full h-full", className)}>
       {!hideTitle && (
         <div className="pt-8 pb-4">
-          <ThemedWelcome name="Dog" message="Note Boards" />
+          <ThemedWelcome name="Dog" message="便签画布" />
         </div>
       )}
 
       <div className="mx-auto max-w-5xl p-4 space-y-10">
         <Section
-          title="On this device"
-          hint="Private to this browser — no account needed"
+          title="本机"
+          hint="仅存于这个浏览器 —— 无需账号"
           footer={
             ready && onDevice.length === 0
-              ? "No local boards yet — create one above."
+              ? "还没有本地画布 —— 在上方创建一个。"
               : null
           }
         >
@@ -92,11 +92,11 @@ export function BoardsHome({
         </Section>
 
         <Section
-          title="Synced"
-          hint="Backed up, multi-device, shareable"
+          title="已同步"
+          hint="已备份、多设备、可分享"
           footer={
             signedIn && !isLoading && synced.length === 0
-              ? "No synced boards yet. Enable sync on a local board to back it up and share it."
+              ? "还没有已同步的画布。在本地画布上启用同步即可备份并分享。"
               : signedIn && isLoading
                 ? "Loading…"
                 : null
@@ -175,19 +175,19 @@ function SyncedSignInCta({ onSignIn }: { onSignIn: () => void }) {
     <div className="w-64 h-60 flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-border p-6 text-center">
       <CloudArrowUpIcon className="size-8 text-muted-foreground" strokeWidth={2} />
       <div className="space-y-1">
-        <p className="text-sm font-medium text-foreground">Sync &amp; share your boards</p>
+        <p className="text-sm font-medium text-foreground">同步并分享你的画布</p>
         <p className="text-xs text-muted-foreground">
-          Sign in to back them up and open them on any device.
+          登录即可备份，并在任意设备上打开。
         </p>
       </div>
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant="secondary" size="sm" onClick={onSignIn}>
-            Sign in
+            登录
           </Button>
         </TooltipTrigger>
         <TooltipContent>
-          Signing up is completely free — no credit card required
+          注册完全免费 —— 无需信用卡
         </TooltipContent>
       </Tooltip>
     </div>

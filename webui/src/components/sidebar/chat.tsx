@@ -47,7 +47,7 @@ export function NewChatItem({
           className='text-xs text-muted-foreground font-medium truncate cursor-pointer'
           isActive={isActive}
         >
-          <span>New Chat</span>
+          <span>新建对话</span>
         </SidebarMenuSubButton>
       </SidebarMenuSubItem>
     )
@@ -60,7 +60,7 @@ export function NewChatItem({
         isActive={isActive}
       >
         <ChatNewIcon className='text-xs shrink-0 text-sidebar-icon-4' weight={isActive ? 'fill' : undefined} strokeWidth={2} />
-        <span>New Chat</span>
+        <span>新建对话</span>
       </SidebarMenuButton>
     </SidebarMenuItem>
   )
@@ -125,7 +125,7 @@ export function ChatMenuItem({ chatId, label }: { chatId: string, label?: string
             className='text-xs flex flex-row items-center'
           >
             <DeleteIcon className="size-4 mr-2" strokeWidth={2} />
-            <span>Delete Chat</span>
+            <span>删除对话</span>
           </ContextMenuItem>
         </ContextMenuContent>
       </ContextMenu>

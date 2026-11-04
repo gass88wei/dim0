@@ -139,7 +139,7 @@ export function NewsletterCard({
           disabled={!!generating}
         >
           <FolderIcon className='mr-2 size-4' strokeWidth={2} />
-          Open
+          打开
         </ContextMenuItem>
 
         <ContextMenuSeparator />
@@ -151,7 +151,7 @@ export function NewsletterCard({
           disabled={!!generating || del.isPending}
         >
           <DeleteIcon className='mr-2 size-4' strokeWidth={2} />
-          Delete
+          删除
         </ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>

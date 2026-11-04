@@ -15,7 +15,7 @@ export function SendButton({  className,
 }: SendButtonProps) {
   return (
     <Button
-      aria-label={loadingStatus === "loaded" ? "Send" : "Sending"}
+      aria-label={loadingStatus === "loaded" ? "发送" : "发送中"}
       className={cn("rounded-lg flex items-center justify-center shadow-none", className)}
       {...props}
       variant={loadingStatus === "loaded" ? 'default' : "ghost"}

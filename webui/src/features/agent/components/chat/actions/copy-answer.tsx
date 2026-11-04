@@ -34,7 +34,7 @@ export const CopyAnswer = ({ answer, compact = false }: { answer: string, compac
       title={actionLabel}
     >
       <Icon className='size-4 shrink-0' strokeWidth={2} weight={compact ? "duotone" : undefined} />
-      {!compact && <span>Copy</span>}
+      {!compact && <span>复制</span>}
     </button>
   )
 
@@ -43,7 +43,7 @@ export const CopyAnswer = ({ answer, compact = false }: { answer: string, compac
   return (
     <Tooltip>
       <TooltipTrigger asChild>{buttonEl}</TooltipTrigger>
-      <TooltipContent side='left'>Copy</TooltipContent>
+      <TooltipContent side='left'>复制</TooltipContent>
     </Tooltip>
   )
 }

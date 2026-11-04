@@ -33,9 +33,9 @@ function Swatches({ colors }: { colors: SwatchTrio }) {
 
 
 const MODES: { id: Mode; label: string; Icon: typeof SunIcon }[] = [
-  { id: "light",  label: "Light",  Icon: SunIcon },
-  { id: "dark",   label: "Dark",   Icon: MoonIcon },
-  { id: "system", label: "System", Icon: MonitorIcon },
+  { id: "light",  label: "浅色",  Icon: SunIcon },
+  { id: "dark",   label: "深色",   Icon: MoonIcon },
+  { id: "system", label: "跟随系统", Icon: MonitorIcon },
 ]
 
 
@@ -58,11 +58,11 @@ export function ModeToggle(props: React.ComponentProps<typeof Button>) {
           {...props}
         >
           <Swatches colors={activeSwatch} />
-          <span className="sr-only">Theme and mode</span>
+          <span className="sr-only">主题与模式</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className='min-w-[180px]'>
-        <DropdownMenuLabel className='text-xs text-muted-foreground font-normal'>Theme</DropdownMenuLabel>
+        <DropdownMenuLabel className='text-xs text-muted-foreground font-normal'>主题</DropdownMenuLabel>
         {themes.map((t) => {
           const swatch = resolvedTheme === "dark" ? t.swatchDark : t.swatchLight
           const isActive = t.id === themeId
@@ -75,7 +75,7 @@ export function ModeToggle(props: React.ComponentProps<typeof Button>) {
           )
         })}
         <DropdownMenuSeparator />
-        <DropdownMenuLabel className='text-xs text-muted-foreground font-normal'>Mode</DropdownMenuLabel>
+        <DropdownMenuLabel className='text-xs text-muted-foreground font-normal'>模式</DropdownMenuLabel>
         {MODES.map(({ id, label, Icon }) => {
           const isActive = id === mode
           return (

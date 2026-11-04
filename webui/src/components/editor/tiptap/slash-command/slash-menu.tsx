@@ -47,7 +47,7 @@ export const SlashMenu = forwardRef<SlashMenuHandle, Props>(
       return (
         <div className="slash-menu" onMouseDown={(e) => e.preventDefault()}>
           <p className="px-3 py-2 font-sans text-xs text-muted-foreground">
-            No results
+            没有结果
           </p>
         </div>
       )
@@ -56,7 +56,7 @@ export const SlashMenu = forwardRef<SlashMenuHandle, Props>(
     return (
       <div className="slash-menu" onMouseDown={(e) => e.preventDefault()}>
         <p className="px-3 pb-1 pt-2 font-sans text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-          Basic blocks
+          基础块
         </p>
         {items.map((item, index) => {
           const Icon = item.icon

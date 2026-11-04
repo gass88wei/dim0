@@ -79,7 +79,7 @@ export function BillingScreen() {
         const summary = await getBillingSummary()
         setBillingSummary(summary)
       } catch (error) {
-        setErrorMessage(error instanceof Error ? error.message : "Could not load billing status.")
+        setErrorMessage(error instanceof Error ? error.message : "无法加载账单状态。")
       }
     })()
   }, [billingActive])
@@ -181,7 +181,7 @@ export function BillingScreen() {
       if (isTauri()) pendingReturnPlan.current = userPlan
       await openExternalUrl(data.checkout_url)
     } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : "Could not create checkout session.")
+      setErrorMessage(error instanceof Error ? error.message : "无法创建结算会话。")
     } finally {
       setBusyAction(null)
     }
@@ -202,7 +202,7 @@ export function BillingScreen() {
       if (isTauri()) pendingReturnPlan.current = userPlan
       await openExternalUrl(data.portal_url)
     } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : "Could not open billing portal.")
+      setErrorMessage(error instanceof Error ? error.message : "无法打开账单门户。")
     } finally {
       setBusyAction(null)
     }
@@ -252,26 +252,26 @@ export function BillingScreen() {
     <div className="absolute inset-0 overflow-y-auto scrollbar-thin bg-background">
       <div className="mx-auto w-full max-w-7xl px-6 py-20 space-y-6">
         <div className="space-y-2">
-          <h1 className="text-5xl leading-none">Billing Plans</h1>
+          <h1 className="text-5xl leading-none">订阅方案</h1>
           <p className="text-sm text-muted-foreground">
-            Pick the plan that matches your workspace needs
+            选择适合你工作区的方案
           </p>
         </div>
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-3xl">Current subscription</CardTitle>
+            <CardTitle className="text-3xl">当前订阅</CardTitle>
             <CardDescription>
-              Choose your plan and manage your subscription
+              选择方案并管理订阅
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground font-bold">Current Plan</span>
+              <span className="text-sm text-muted-foreground font-bold">当前方案</span>
               <TierBadge plan={userPlan} />
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground font-bold">Status</span>
+              <span className="text-sm text-muted-foreground font-bold">状态</span>
               <Badge
                 variant="outline"
                 className={[
@@ -312,27 +312,27 @@ export function BillingScreen() {
           <Card className="relative">
             <CardHeader>
               <div className="flex items-center gap-2">
-                <CardTitle className="text-4xl font-semibold">Free</CardTitle>
+                <CardTitle className="text-4xl font-semibold">免费版</CardTitle>
                 {userPlan === "free" ? (
                   <Badge variant="outline" className="w-fit bg-background/40 font-mono font-medium uppercase tracking-wide">
-                    Current
+                    当前
                   </Badge>
                 ) : null}
               </div>
-              <CardDescription>Starter plan for personal exploration</CardDescription>
+              <CardDescription>适合个人探索的入门方案</CardDescription>
             </CardHeader>
             <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p className="text-3xl font-semibold text-foreground">Free</p>
-              <FeatureRow icon={SparklesIcon} label="50 AI requests / day" />
-              <FeatureRow icon={SparklesIcon} label="750 AI requests / month" />
-              <FeatureRow icon={CardsThree} label="5 boards" />
-              <FeatureRow icon={UsersThree} label="Up to 5 collaborators / board" />
-              <FeatureRow icon={DocumentIcon} label="3 documents / board" />
-              <FeatureRow icon={PuzzlePieceIcon} label="10 mini-apps / board" />
-              <FeatureRow icon={ChatTranslateIcon} label="Lite models only" />
-              <FeatureRow icon={Headset} label="Community support" />
+              <p className="text-3xl font-semibold text-foreground">免费版</p>
+              <FeatureRow icon={SparklesIcon} label="每天 50 次 AI 请求" />
+              <FeatureRow icon={SparklesIcon} label="每月 750 次 AI 请求" />
+              <FeatureRow icon={CardsThree} label="5 块画布" />
+              <FeatureRow icon={UsersThree} label="每块画布最多 5 位协作者" />
+              <FeatureRow icon={DocumentIcon} label="每块画布 3 个文档" />
+              <FeatureRow icon={PuzzlePieceIcon} label="每块画布 10 个小程序" />
+              <FeatureRow icon={ChatTranslateIcon} label="仅轻量模型" />
+              <FeatureRow icon={Headset} label="社区支持" />
               <p className="pt-2 text-xs leading-relaxed text-muted-foreground/80">
-                Great for trying Dim0 and personal projects. Upgrade any time as your workspace grows.
+                适合体验 Dim0 和个人项目，随时可随工作区扩容升级。
               </p>
             </CardContent>
           </Card>
@@ -340,14 +340,14 @@ export function BillingScreen() {
           <Card className="relative">
             <CardHeader>
               <div className="flex items-center gap-2">
-                <CardTitle className="text-4xl font-semibold">Basic</CardTitle>
+                <CardTitle className="text-4xl font-semibold">基础版</CardTitle>
                 {userPlan === "basic" ? (
                   <Badge variant="outline" className="w-fit bg-background/40 font-mono font-medium uppercase tracking-wide">
-                    Current
+                    当前
                   </Badge>
                 ) : null}
               </div>
-              <CardDescription>For steady, everyday use</CardDescription>
+              <CardDescription>适合稳定日常使用</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-end gap-2">
@@ -355,14 +355,14 @@ export function BillingScreen() {
                 <span className="text-sm text-muted-foreground">/ {basicIntervalLabel}</span>
               </div>
               <div className="space-y-2.5 text-sm text-muted-foreground">
-                <FeatureRow icon={SparklesIcon} label="150 AI requests / day" />
-                <FeatureRow icon={SparklesIcon} label="3,000 AI requests / month" />
-                <FeatureRow icon={CardsThree} label="Unlimited boards" />
-                <FeatureRow icon={UsersThree} label="Up to 10 collaborators / board" />
-                <FeatureRow icon={DocumentIcon} label="10 documents / board" />
-                <FeatureRow icon={PuzzlePieceIcon} label="20 mini-apps / board" />
-                <FeatureRow icon={ChatTranslateIcon} label="Lite models (no top-tier AI)" />
-                <FeatureRow icon={Headset} label="Standard support" />
+                <FeatureRow icon={SparklesIcon} label="每天 150 次 AI 请求" />
+                <FeatureRow icon={SparklesIcon} label="每月 3,000 次 AI 请求" />
+                <FeatureRow icon={CardsThree} label="不限画布数量" />
+                <FeatureRow icon={UsersThree} label="每块画布最多 10 位协作者" />
+                <FeatureRow icon={DocumentIcon} label="每块画布 10 个文档" />
+                <FeatureRow icon={PuzzlePieceIcon} label="每块画布 20 个小程序" />
+                <FeatureRow icon={ChatTranslateIcon} label="轻量模型（不含顶级 AI）" />
+                <FeatureRow icon={Headset} label="标准支持" />
               </div>
 
               {userPlan === "basic" ? (
@@ -402,14 +402,14 @@ export function BillingScreen() {
             <CardHeader>
               <div className="flex items-center gap-2">
                 <AwardIcon className="h-6 w-6 text-secondary-foreground" strokeWidth={2} />
-                <CardTitle className="text-4xl font-semibold">Plus</CardTitle>
+                <CardTitle className="text-4xl font-semibold">进阶版</CardTitle>
                 {userPlan === "plus" ? (
                   <Badge variant="outline" className="w-fit bg-background/40 font-mono font-medium uppercase tracking-wide">
-                    Current
+                    当前
                   </Badge>
                 ) : null}
               </div>
-              <CardDescription>Best for active daily workflows</CardDescription>
+              <CardDescription>适合高强度日常使用</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-end gap-2">
@@ -417,13 +417,13 @@ export function BillingScreen() {
                 <span className="text-sm text-muted-foreground">/ {plusIntervalLabel}</span>
               </div>
               <div className="space-y-2.5 text-sm text-muted-foreground">
-                <FeatureRow icon={SparklesIcon} label="Unlimited AI requests" />
-                <FeatureRow icon={CardsThree} label="Unlimited boards" />
-                <FeatureRow icon={UsersThree} label="Up to 20 collaborators / board" />
-                <FeatureRow icon={DocumentIcon} label="25 documents / board" />
-                <FeatureRow icon={PuzzlePieceIcon} label="100 mini-apps / board" />
-                <FeatureRow icon={SparklesFeatureIcon} label="Frontier models: GPT, Claude, Gemini & more" />
-                <FeatureRow icon={Headset} label="Priority support" />
+                <FeatureRow icon={SparklesIcon} label="不限 AI 请求次数" />
+                <FeatureRow icon={CardsThree} label="不限画布数量" />
+                <FeatureRow icon={UsersThree} label="每块画布最多 20 位协作者" />
+                <FeatureRow icon={DocumentIcon} label="每块画布 25 个文档" />
+                <FeatureRow icon={PuzzlePieceIcon} label="每块画布 100 个小程序" />
+                <FeatureRow icon={SparklesFeatureIcon} label="前沿模型：GPT、Claude、Gemini 等" />
+                <FeatureRow icon={Headset} label="优先支持" />
               </div>
 
               {userPlan === "plus" ? (
@@ -459,7 +459,7 @@ export function BillingScreen() {
         </div>
 
         <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-muted-foreground">
-          <span>Prefer to run it yourself? Dim0 is open source (MIT).</span>
+          <span>想自己跑？Dim0 是开源项目（MIT）。</span>
           <a
             href={GITHUB_URL}
             target="_blank"

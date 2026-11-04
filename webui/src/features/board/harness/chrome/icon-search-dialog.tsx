@@ -90,11 +90,11 @@ const IconSearchDialogBody = ({
   return (
     <>
       <DialogHeader className="w-full border-b p-4 text-center text-secondary-foreground">
-        <DialogTitle>Search icons</DialogTitle>
+        <DialogTitle>搜索图标</DialogTitle>
       </DialogHeader>
       <div className="p-4">
         <Input
-          placeholder="Search Icon…"
+          placeholder="搜索图标…"
           value={q}
           onChange={(e) => setQ(e.target.value)}
           autoFocus
@@ -124,7 +124,7 @@ const IconSearchDialogBody = ({
             ))}
             {debouncedQ && !data?.length && (
               <div className="col-span-full p-4 text-sm text-muted-foreground">
-                No results
+                没有结果
               </div>
             )}
           </div>

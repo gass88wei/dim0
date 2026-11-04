@@ -43,7 +43,7 @@ export function CodeArea({
   value,
   onChange,
   language = "python",
-  placeholder = "Write code here",
+  placeholder = "在这里写代码",
   readOnly = false,
 }: CodeAreaProps) {
   const { shikiThemes } = useTheme()

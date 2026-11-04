@@ -167,7 +167,7 @@ export function AppletNodeView({ id }: AppletViewProps) {
         <NodeTitleCaption
           nodeId={id}
           label={label}
-          placeholder="Untitled applet"
+          placeholder="未命名小程序块"
           textClassName="text-center text-sm font-handwriting text-foreground"
         />
       </div>

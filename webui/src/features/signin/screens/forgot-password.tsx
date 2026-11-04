@@ -24,9 +24,9 @@ export function ForgotPasswordPage() {
     <div className="w-full max-w-md mx-auto">
       <Card className="bg-card text-card-foreground border border-border shadow-xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl">Forgot your password?</CardTitle>
+          <CardTitle className="text-2xl">忘记密码？</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Enter your email and we'll send you a link to reset it.
+            输入邮箱，我们会发送一条重置链接给你。
           </CardDescription>
         </CardHeader>
 
@@ -34,14 +34,14 @@ export function ForgotPasswordPage() {
           {submitted ? (
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground">
-                If an account exists for <span className="font-medium text-foreground">{email}</span>,
+                如果存在以下账户 <span className="font-medium text-foreground">{email}</span>,
                 we've sent a password reset link to that address. Check your inbox and spam folder.
               </p>
               <Link
                 to="/signin"
                 className="block w-full text-center text-sm font-medium underline underline-offset-2"
               >
-                Back to sign in
+                返回登录
               </Link>
             </div>
           ) : (
@@ -53,7 +53,7 @@ export function ForgotPasswordPage() {
               }}
             >
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">邮箱</Label>
                 <div className="relative">
                   <Input
                     id="email"
@@ -80,7 +80,7 @@ export function ForgotPasswordPage() {
                 {mut.isPending ? (
                   <span className="inline-flex items-center gap-2">
                     <Loader2Icon className="h-4 w-4 animate-spin" />
-                    Sending…
+                    发送中…
                   </span>
                 ) : (
                   "Send reset link"
@@ -90,7 +90,7 @@ export function ForgotPasswordPage() {
               <p className="text-center text-sm text-muted-foreground">
                 Remembered it?{" "}
                 <Link to="/signin" className="font-medium underline">
-                  Back to sign in
+                  返回登录
                 </Link>
               </p>
             </form>

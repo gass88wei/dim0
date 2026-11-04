@@ -28,7 +28,7 @@ const ReasoningMessage = ({
     <div className='text-muted-foreground p-0 space-y-1 italic'>
       <div className='flex items-center gap-2 font-medium cursor-pointer text-xs'>
         <ThoughtIcon className='size-4' strokeWidth={2} />
-        <span>Thought</span>
+        <span>思考</span>
       </div>
       <span className='text-sm'>{reasoning}</span>
     </div>
@@ -110,7 +110,7 @@ export const NoteToolResult = ({
         </Link>
       </div>
       <div className='mt-1 text-sm text-card-foreground whitespace-pre-line'>
-        <span className='font-medium'>{output.label || "Untitled note"}</span>
+        <span className='font-medium'>{output.label || "未命名便签"}</span>
         {` • ${typeLabel}`}
       </div>
     </div>

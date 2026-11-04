@@ -132,12 +132,12 @@ function Status({ text }: { text: string }) {
 function SignInPanel({ onGoSignIn }: { onGoSignIn: () => void }) {
   return (
     <div className="flex flex-col items-center gap-3 text-center">
-      <h1 className="text-lg font-semibold">You've been invited to a board</h1>
+      <h1 className="text-lg font-semibold">你被邀请加入一块画布</h1>
       <p className="text-sm text-muted-foreground">
-        Sign in to your Dim0 account to accept this invitation.
+        登录 Dim0 账户以接受这个邀请。
       </p>
       <Button onClick={onGoSignIn} className="mt-2">
-        Sign in
+        登录
       </Button>
     </div>
   )
@@ -147,14 +147,14 @@ function SignInPanel({ onGoSignIn }: { onGoSignIn: () => void }) {
 function ReadyPanel({ role, onOpen }: { role: ShareRole; onOpen: () => void }) {
   return (
     <div className="flex flex-col items-center gap-3 text-center">
-      <h1 className="text-lg font-semibold">You've been invited</h1>
+      <h1 className="text-lg font-semibold">你收到一个邀请</h1>
       <p className="text-sm text-muted-foreground">
         {role === "member"
           ? "You'll be able to view and edit this board."
           : "You'll have view-only access to this board."}
       </p>
       <Button onClick={onOpen} className="mt-2">
-        Open board
+        打开画布
       </Button>
     </div>
   )
@@ -164,10 +164,10 @@ function ReadyPanel({ role, onOpen }: { role: ShareRole; onOpen: () => void }) {
 function ErrorPanel({ message, onGoHome }: { message: string; onGoHome: () => void }) {
   return (
     <div className="flex flex-col items-center gap-3 text-center">
-      <h1 className="text-lg font-semibold">This invitation isn't usable</h1>
+      <h1 className="text-lg font-semibold">这个邀请不可用</h1>
       <p className="text-sm text-muted-foreground">{message}</p>
       <Button variant="secondary" onClick={onGoHome} className="mt-2">
-        Back home
+        返回首页
       </Button>
     </div>
   )

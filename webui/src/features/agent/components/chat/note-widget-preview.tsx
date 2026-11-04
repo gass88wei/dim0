@@ -44,7 +44,7 @@ export const NoteWidgetPreview = ({
         <div className='skeleton-shimmer absolute inset-0' />
         <div className='relative z-10 flex h-full w-full flex-col items-center justify-center gap-2 text-center text-sm text-muted-foreground'>
           <LoaderIcon className='size-5 animate-spin' />
-          <span>Generating widget preview</span>
+          <span>正在生成小组件预览</span>
         </div>
       </div>
     )
@@ -54,7 +54,7 @@ export const NoteWidgetPreview = ({
     return (
       <div className='flex h-[260px] w-full items-center justify-center rounded-xl bg-muted/40 text-sm text-muted-foreground'>
         <LoaderIcon className='mr-2 size-4 animate-spin' />
-        Loading widget preview
+        正在加载小组件预览
       </div>
     )
   }
@@ -63,7 +63,7 @@ export const NoteWidgetPreview = ({
     return (
       <div className='flex h-[260px] w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-border/60 bg-muted/30 px-4 text-center text-sm text-muted-foreground'>
         <WarningIcon className='size-5' />
-        <span>Widget preview unavailable</span>
+        <span>小组件预览不可用</span>
         <Link
           to='/boards/$id'
           params={{ id: boardId }}
@@ -74,7 +74,7 @@ export const NoteWidgetPreview = ({
           }}
           className='inline-flex items-center gap-1 text-xs font-medium text-secondary-foreground hover:underline'
         >
-          Open on board
+          在画布中打开
           <ExternalLinkIcon className='size-3.5' />
         </Link>
       </div>
@@ -84,7 +84,7 @@ export const NoteWidgetPreview = ({
   return (
     <LazyMountedWidgetIframe
       html={note.content.markdown}
-      title={note.label?.markdown || "Widget preview"}
+      title={note.label?.markdown || "小组件预览"}
     />
   )
 }

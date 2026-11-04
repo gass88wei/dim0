@@ -200,7 +200,7 @@ export function MiniAppView({ id }: MiniAppViewProps) {
         <NodeTitleCaption
           nodeId={id}
           label={label}
-          placeholder="Untitled mini-app"
+          placeholder="未命名小程序"
           textClassName="text-center text-sm font-handwriting text-foreground"
         />
       </div>

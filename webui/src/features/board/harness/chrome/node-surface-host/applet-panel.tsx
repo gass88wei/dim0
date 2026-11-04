@@ -76,9 +76,9 @@ export const AppletPanel = memo(function AppletPanel({
   if (!node) {
     return (
       <div className={`${SURFACE_PANEL_CLASS} items-center justify-center gap-3 text-sm text-muted-foreground`}>
-        <p>This applet no longer exists.</p>
+        <p>这个小程序块已不存在。</p>
         <Button variant="outline" size="sm" onClick={onClose}>
-          Close
+          关闭
         </Button>
       </div>
     )
@@ -98,8 +98,8 @@ export const AppletPanel = memo(function AppletPanel({
             variant="ghost"
             size="icon-sm"
             onClick={handleDownloadSource}
-            title="Download .jsx"
-            aria-label="Download source"
+            title="下载 .jsx"
+            aria-label="下载源码"
             disabled={!source}
           >
             <DownloadIcon className="size-4" />
@@ -108,8 +108,8 @@ export const AppletPanel = memo(function AppletPanel({
             variant="ghost"
             size="icon-sm"
             onClick={onClose}
-            title="Close"
-            aria-label="Close"
+            title="关闭"
+            aria-label="关闭"
           >
             <CancelPlainIcon className="size-4" />
           </Button>
@@ -119,8 +119,8 @@ export const AppletPanel = memo(function AppletPanel({
       <Tabs value={activeTab} onValueChange={setActiveTab} className="min-h-0 flex-1 gap-0">
         <div className="border-b border-border/70 px-4 py-2">
           <TabsList>
-            <TabsTrigger value="preview">Preview</TabsTrigger>
-            <TabsTrigger value="source">Source</TabsTrigger>
+            <TabsTrigger value="preview">预览</TabsTrigger>
+            <TabsTrigger value="source">源码</TabsTrigger>
           </TabsList>
         </div>
 
@@ -135,11 +135,11 @@ export const AppletPanel = memo(function AppletPanel({
                 // (e.g. the step table) unreachable.
                 <AppletRenderer source={source} initialState={initialState} className="w-full" />
               ) : (
-                <div className="flex h-full w-full items-center justify-center text-sm text-muted-foreground">Loading…</div>
+                <div className="flex h-full w-full items-center justify-center text-sm text-muted-foreground">加载中…</div>
               )
             ) : (
               <div className="flex h-full w-full items-center justify-center px-6 text-center text-sm text-muted-foreground">
-                Applet source is empty.
+                小程序块源码为空。
               </div>
             )}
           </div>

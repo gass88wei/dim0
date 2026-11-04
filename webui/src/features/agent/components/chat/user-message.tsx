@@ -60,16 +60,16 @@ export const UserMessage = ({ message, isLatest }: { message: ChatMessage, isLat
                 <button
                   type="button"
                   className="opacity-80 hover:opacity-100 transition-opacity"
-                  aria-label="Show message context"
+                  aria-label="查看消息上下文"
                 >
                   <Badge variant="secondary" className="text-[10px] bg-muted text-muted-foreground flex items-center gap-1 px-1.5 py-0.5">
                     <SelectionContextIcon className="size-3 shrink-0" strokeWidth={2} />
-                    <span>Context</span>
+                    <span>上下文</span>
                   </Badge>
                 </button>
               </PopoverTrigger>
               <PopoverContent align="end" className="w-96 max-w-[80vw]">
-                <p className="text-xs font-medium text-muted-foreground mb-2">Context used</p>
+                <p className="text-xs font-medium text-muted-foreground mb-2">已用上下文</p>
                 <pre className="text-xs whitespace-pre-wrap break-words max-h-64 overflow-auto scrollbar-thin">
                   {contextText}
                 </pre>
@@ -102,7 +102,7 @@ const CopyUserMessageButton = ({ text, className }: { text: string, className?: 
       type="button"
     >
       <Icon className="size-4 shrink-0" strokeWidth={2} />
-      <span>Copy</span>
+      <span>复制</span>
     </button>
   )
 }

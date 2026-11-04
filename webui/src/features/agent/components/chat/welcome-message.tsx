@@ -10,7 +10,7 @@ const MASCOTS = [
   {
     name: 'Dog',
     file: 'Dog.lottie',
-    message: "Ask me anything — I’ll sniff through the web and fetch the best insights!",
+    message: "随便问——我会翻遍全网，给你找出最有价值的见解！",
   },
   {
     name: 'Cat',
@@ -131,7 +131,7 @@ function WelcomeLayout({
           onClick={onShuffle}
           aria-label='Shuffle welcome message'
         >
-          Shuffle
+          换一批
         </button>
       ) : null}
       {afterContent ? <div className='mt-4 flex justify-center'>{afterContent}</div> : null}
@@ -147,7 +147,7 @@ export function WelcomeMessage({ afterContent }: { afterContent?: ReactNode }) {
       <div className='relative w-full flex flex-col items-center justify-center text-center'>
         <div style={{ width: 100, height: 100 }} />
         <div className='mt-2 text-xl text-card-foreground'>
-          <span>Loading your open‑source sidekick…</span>
+          <span>正在唤醒你的开源搭档…</span>
         </div>
       </div>
     )

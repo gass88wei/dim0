@@ -216,17 +216,17 @@ export const SidebarLabel = ({ mobileContextOnly = false }: { mobileContextOnly?
 
   // HOME
   if (active.view === "home")
-    return <div className={wrapClass}>Home</div>
+    return <div className={wrapClass}>首页</div>
 
   // DASHBOARD
   if (active.view === "dashboard")
-    return <div className={wrapClass}>Dashboard</div>
+    return <div className={wrapClass}>总览</div>
 
   if (active.view === "settings")
-    return <div className={wrapClass}>Profile</div>
+    return <div className={wrapClass}>个人资料</div>
 
   if (active.view === "settings-billing")
-    return <div className={wrapClass}>Billing</div>
+    return <div className={wrapClass}>订阅与账单</div>
 
   // SUBSCRIPTIONS
   if (active.view === "subscriptions") {
@@ -238,9 +238,9 @@ export const SidebarLabel = ({ mobileContextOnly = false }: { mobileContextOnly?
           type="button"
           onClick={goSubscriptionsRoot}
           className={`${crumbBtn} font-medium`}
-          title="Newsfeed"
+          title="资讯流"
         >
-          Newsfeed
+          资讯流
         </button>
         {active.id && (
           <>

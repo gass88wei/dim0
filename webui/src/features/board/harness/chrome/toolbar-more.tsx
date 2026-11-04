@@ -78,17 +78,17 @@ const MoreMenuItems = ({
     <>
       <DropdownMenuItem onSelect={() => setChromeDialog("icon-search")} className="gap-2 text-sm">
         <PuzzlePieceIcon className="size-4 shrink-0" />
-        <span>Icons</span>
+        <span>图标</span>
         <DropdownMenuShortcut>G</DropdownMenuShortcut>
       </DropdownMenuItem>
       <DropdownMenuItem onSelect={() => setChromeDialog("image-search")} className="gap-2 text-sm">
         <ImageStackIcon className="size-4 shrink-0" />
-        <span>Images</span>
+        <span>图片</span>
         <DropdownMenuShortcut>I</DropdownMenuShortcut>
       </DropdownMenuItem>
       <DropdownMenuItem onSelect={() => setTool("folder")} className="gap-2 text-sm">
         <FolderPlusActionIcon className="size-4 shrink-0" />
-        <span>Sub-board</span>
+        <span>子画布</span>
         <NodeLimitBadge count={folderCount} limit={nodeLimitFor("folder", userPlan)} />
       </DropdownMenuItem>
       <DropdownMenuItem
@@ -97,21 +97,21 @@ const MoreMenuItems = ({
         // parsing is unavailable (no managed access and no BYOK Mistral key).
         onSelect={() => (localUpload ? upload.pick() : setChromeDialog("document-upload"))}
         disabled={localUpload && !upload.canParse}
-        title={localUpload && !upload.canParse ? "Sign in or add a Mistral key to upload documents" : undefined}
+        title={localUpload && !upload.canParse ? "登录或添加 Mistral 密钥以上传文档" : undefined}
         className="gap-2 text-sm"
       >
         <DocumentFileIcon className="size-4 shrink-0" />
-        <span>Document</span>
+        <span>文档</span>
         <NodeLimitBadge count={documentCount} limit={nodeLimitFor("document", userPlan)} />
       </DropdownMenuItem>
       <DropdownMenuItem onSelect={() => setTool("code-sandbox")} className="gap-2 text-sm">
         <CodeFileIcon className="size-4 shrink-0" />
-        <span>Code sandbox</span>
+        <span>代码沙箱</span>
         <NodeLimitBadge count={codeSandboxCount} limit={nodeLimitFor("code-sandbox", userPlan)} />
       </DropdownMenuItem>
       <DropdownMenuItem onSelect={() => setTool("applet")} className="gap-2 text-sm">
         <ChartLineIcon className="size-4 shrink-0" />
-        <span>Applet</span>
+        <span>小程序块</span>
         <NodeLimitBadge count={appletCount} limit={nodeLimitFor("applet", userPlan)} />
       </DropdownMenuItem>
     </>
@@ -148,14 +148,14 @@ export function HarnessToolbarMore({ local = false }: { local?: boolean } = {}) 
             <DropdownMenuTrigger asChild>
               <button
                 type="button"
-                aria-label="More actions"
+                aria-label="更多操作"
                 className={cn(moreButtonClass)}
               >
                 <EllipsisIcon className="size-4 shrink-0" />
               </button>
             </DropdownMenuTrigger>
           </TooltipTrigger>
-          <TooltipContent side="bottom" sideOffset={10}>More actions</TooltipContent>
+          <TooltipContent side="bottom" sideOffset={10}>更多操作</TooltipContent>
         </Tooltip>
         <DropdownMenuContent
           align="end"

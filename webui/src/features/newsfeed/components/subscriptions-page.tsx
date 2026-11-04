@@ -50,7 +50,7 @@ export default function SubscriptionsPage({
             <CreateSubscriptionDialog
               trigger={
                 <CreateSubscriptionCardTrigger>
-                  <span className='sr-only'>Create</span>
+                  <span className='sr-only'>创建</span>
                 </CreateSubscriptionCardTrigger>
               }
             />
@@ -58,7 +58,7 @@ export default function SubscriptionsPage({
               onClick={() => navigate({ to: '/subscriptions' })}
               className='text-sm font-medium text-muted-foreground hover:text-foreground underline underline-offset-4 decoration-muted-foreground/40 hover:decoration-foreground'
             >
-              View All Topics
+              查看全部主题
             </button>
           </div>
         ) : (
@@ -67,7 +67,7 @@ export default function SubscriptionsPage({
               <CreateSubscriptionDialog
                 trigger={
                   <CreateSubscriptionCardTrigger>
-                    <span className='sr-only'>Create</span>
+                    <span className='sr-only'>创建</span>
                   </CreateSubscriptionCardTrigger>
                 }
               />
@@ -77,11 +77,11 @@ export default function SubscriptionsPage({
             </div>
 
             {subs.isLoading && (
-              <div className='text-center mt-6 text-muted-foreground text-sm'>Loading…</div>
+              <div className='text-center mt-6 text-muted-foreground text-sm'>加载中…</div>
             )}
             {subs.isError && (
               <div className='text-center mt-6 text-destructive text-sm'>
-                Failed to load subscriptions
+                订阅加载失败
               </div>
             )}
           </>

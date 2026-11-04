@@ -10,10 +10,10 @@ import type { Page, PageProvider } from "./types"
 export function createStubPageProvider(): PageProvider {
   const store = new Map<string, Page>()
   const seed: Page[] = [
-    { id: "p_welcome",      title: "Welcome" },
-    { id: "p_design-notes", title: "Design notes" },
-    { id: "p_meeting-2026", title: "Q1 planning" },
-    { id: "p_inbox",        title: "Inbox" },
+    { id: "p_welcome",      title: "欢迎" },
+    { id: "p_design-notes", title: "设计笔记" },
+    { id: "p_meeting-2026", title: "第一季度规划" },
+    { id: "p_inbox",        title: "收件箱" },
   ]
   seed.forEach((p) => store.set(p.id, p))
 

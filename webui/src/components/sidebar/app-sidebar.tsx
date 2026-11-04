@@ -257,7 +257,7 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
                       className="h-auto py-2 min-w-0 flex-1"
                       onClick={() => navigate({ to: "/" })}
                     >
-                      <img src="/dim0.svg" alt="Dim0 Home" className="h-7 w-7 shrink-0" />
+                      <img src="/dim0.svg" alt="Dim0 首页" className="h-7 w-7 shrink-0" />
                       <span className="font-medium">Dim0</span>
                     </SidebarMenuButton>
 
@@ -265,8 +265,8 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
                       type="button"
                       className="inline-flex size-8 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                       onClick={() => navigate({ to: "/install" })}
-                      aria-label="Install app"
-                      title="Install app"
+                      aria-label="安装应用"
+                      title="安装应用"
                     >
                       <InstallAppIcon className="size-4" strokeWidth={2} />
                     </button>
@@ -281,7 +281,7 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
         <div className="min-h-0 flex-1 overflow-y-auto scrollbar-thin [.tauri:not(.tauri-fullscreen)_&]:pt-11">
           <div className="pb-0">
             <SidebarGroup>
-              <SidebarGroupLabel><span>WORKSPACE</span></SidebarGroupLabel>
+              <SidebarGroupLabel><span>工作区</span></SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
                   <HomeMenuItem />
@@ -297,7 +297,7 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
                     on-device board directly (paid users never hit the at-limit
                     dialog, so this is their only entry point). */}
                 <SidebarGroup>
-                  <SidebarGroupLabel><span>SYNCED</span></SidebarGroupLabel>
+                  <SidebarGroupLabel><span>已同步</span></SidebarGroupLabel>
                   <SidebarGroupContent>
                     <SidebarMenu>
                       <NewBoardItem onClick={handleNewBoard} />
@@ -307,14 +307,14 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
                 </SidebarGroup>
 
                 <SidebarGroup>
-                  <SidebarGroupLabel><span>LOCAL</span></SidebarGroupLabel>
+                  <SidebarGroupLabel><span>本地</span></SidebarGroupLabel>
                   <SidebarGroupAction
                     type="button"
-                    title="New local board"
+                    title="新建本地画布"
                     onClick={() => void handleNewLocal()}
                   >
                     <PlusIcon strokeWidth={2} />
-                    <span className="sr-only">New local board</span>
+                    <span className="sr-only">新建本地画布</span>
                   </SidebarGroupAction>
                   <SidebarGroupContent>
                     <SidebarMenu>
@@ -326,7 +326,7 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
             ) : (
               // Signed-out: local-first. "New board" creates an on-device board.
               <SidebarGroup>
-                <SidebarGroupLabel><span>LOCAL</span></SidebarGroupLabel>
+                <SidebarGroupLabel><span>本地</span></SidebarGroupLabel>
                 <SidebarGroupContent>
                   <SidebarMenu>
                     <NewLocalBoardItem onClick={() => void handleNewLocal()} />
@@ -338,7 +338,7 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
 
             {sharedBoardItems.length > 0 && (
               <SidebarGroup>
-                <SidebarGroupLabel><span>SHARED WITH ME</span></SidebarGroupLabel>
+                <SidebarGroupLabel><span>共享给我</span></SidebarGroupLabel>
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {sharedBoardItems}
@@ -349,7 +349,7 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
 
             {signedIn && (
               <SidebarGroup>
-                <SidebarGroupLabel><span>CHATS</span></SidebarGroupLabel>
+                <SidebarGroupLabel><span>对话</span></SidebarGroupLabel>
                 <SidebarGroupContent>
                   <SidebarMenu>
                     <NewChatItem />
@@ -362,7 +362,7 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
                         className="font-medium text-xs"
                       >
                         <ChatHistoryIcon className="size-4 shrink-0" strokeWidth={2} />
-                        <span>View all chats</span>
+                        <span>查看全部对话</span>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                   </SidebarMenu>
@@ -415,7 +415,7 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
                           onClick={() => navigate({ to: "/settings" })}
                         >
                           <UserProfileIcon className="mr-2 h-4 w-4" strokeWidth={2} />
-                          <span>Profile</span>
+                          <span>个人资料</span>
                         </DropdownMenuItem>
                         {billingActive ? (
                           <DropdownMenuItem
@@ -423,13 +423,13 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
                             onClick={() => navigate({ to: "/settings/billing" })}
                           >
                             <AwardIcon className="mr-2 h-4 w-4 text-secondary-foreground" strokeWidth={2} />
-                            <span>Upgrade Plan</span>
+                            <span>升级方案</span>
                           </DropdownMenuItem>
                         ) : null}
                         <DropdownMenuSeparator />
                         <DropdownMenuItem onClick={onLogout} className='text-xs'>
                           <LogoutIcon className="mr-2 h-4 w-4" strokeWidth={2} />
-                          <span>Logout</span>
+                          <span>退出登录</span>
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
@@ -438,7 +438,7 @@ export function AppSidebar({ onLogout }: AppSidebarProps) {
                   )}
 
                   <div className="ml-auto shrink-0 pt-1">
-                    <ModeToggle aria-label="Toggle theme" />
+                    <ModeToggle aria-label="切换主题" />
                   </div>
                 </div>
               </SidebarMenuItem>

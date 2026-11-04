@@ -172,7 +172,7 @@ export const CodeSandboxPanel = memo(function CodeSandboxPanel({
       setResult({
         status: "error",
         stdout: "",
-        stderr: error instanceof Error ? error.message : "Execution failed.",
+        stderr: error instanceof Error ? error.message : "执行失败。",
         durationMs: 0,
       })
     } finally {
@@ -188,9 +188,9 @@ export const CodeSandboxPanel = memo(function CodeSandboxPanel({
   if (!node) {
     return (
       <div className={`${PANEL_CLASS} items-center justify-center gap-3 text-sm text-muted-foreground`}>
-        <p>This sandbox no longer exists.</p>
+        <p>这个沙箱已不存在。</p>
         <Button variant="outline" size="sm" onClick={onClose}>
-          Close
+          关闭
         </Button>
       </div>
     )
@@ -221,7 +221,7 @@ export const CodeSandboxPanel = memo(function CodeSandboxPanel({
                   }
                 }}
                 className="w-full border-0 border-b border-current/30 bg-transparent px-0 py-0.5 text-sm font-semibold text-foreground focus:border-secondary-foreground focus:outline-none"
-                placeholder="Untitled code"
+                placeholder="未命名代码"
               />
             ) : (
               <button
@@ -238,7 +238,7 @@ export const CodeSandboxPanel = memo(function CodeSandboxPanel({
             <SelectTrigger
               size="sm"
               className="h-7 w-[136px] shrink-0 text-xs"
-              aria-label="Language"
+              aria-label="语言"
             >
               <SelectValue />
             </SelectTrigger>
@@ -255,7 +255,7 @@ export const CodeSandboxPanel = memo(function CodeSandboxPanel({
           {runnable ? (
             <>
               <span className="text-xs text-muted-foreground">
-                Max runtime 60s
+                最长运行 60 秒
               </span>
               <Button
                 type="button"
@@ -274,15 +274,15 @@ export const CodeSandboxPanel = memo(function CodeSandboxPanel({
             </>
           ) : (
             <span className="text-xs text-muted-foreground">
-              Run not supported
+              不支持运行
             </span>
           )}
           <Button
             variant="ghost"
             size="icon-sm"
             onClick={onClose}
-            title="Close"
-            aria-label="Close"
+            title="关闭"
+            aria-label="关闭"
             className="text-foreground"
           >
             <CancelPlainIcon className="size-4" />
@@ -306,7 +306,7 @@ export const CodeSandboxPanel = memo(function CodeSandboxPanel({
             value={codeDraft}
             onChange={setCodeDraft}
             language={language as CodeAreaLanguage}
-            placeholder="Write code here"
+            placeholder="在这里写代码"
           />
         </div>
 

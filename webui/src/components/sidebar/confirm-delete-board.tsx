@@ -38,8 +38,8 @@ export function ConfirmDeleteBoardAlert({
   open,
   onOpenChange,
   onConfirm,
-  title = "Delete this board?",
-  description = "This will permanently delete this board and all its chats. This action cannot be undone.",
+  title = "删除这块画布？",
+  description = "这会永久删除这块画布及其全部对话，且无法撤销。",
 }: ConfirmDeleteBoardAlertProps) {
   return (
     <AlertDialog open={open} onOpenChange={onOpenChange}>
@@ -53,13 +53,13 @@ export function ConfirmDeleteBoardAlert({
 
         <AlertDialogFooter>
           <AlertDialogCancel>
-            Cancel
+            取消
           </AlertDialogCancel>
           <AlertDialogAction
             onClick={onConfirm}
             className="bg-destructive !text-destructive-foreground hover:bg-destructive/90"
           >
-            Delete
+            删除
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

@@ -25,9 +25,9 @@ export function HarnessReadonlyChip() {
     <span
       className="px-1 text-xs font-medium text-amber-600 dark:text-amber-400"
       role="status"
-      aria-label="Board is read-only"
+      aria-label="画布为只读"
     >
-      Read-only
+      只读
     </span>
   )
 }

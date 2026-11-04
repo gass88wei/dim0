@@ -14,7 +14,7 @@ export const SettingsButton = ({ emphasize = false }: { emphasize?: boolean }) =
       <button
         type="button"
         title={emphasize ? "Set a model to start" : "Settings"}
-        aria-label="Agent settings"
+        aria-label="智能体设置"
         className={cn(
           "shrink-0 rounded-lg p-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-foreground/30",
           emphasize

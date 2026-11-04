@@ -39,9 +39,9 @@ type TextureOption = {
 
 
 const TEXTURE_OPTIONS: ReadonlyArray<TextureOption> = [
-  { value: null, label: "None" },
-  { value: "lines", label: "Lines" },
-  { value: "dots", label: "Dots" },
+  { value: null, label: "无" },
+  { value: "lines", label: "线条" },
+  { value: "dots", label: "点阵" },
 ]
 
 
@@ -109,14 +109,14 @@ export function HarnessViewportControls() {
               type="button"
               onClick={handleResetZoom}
               className={BTN_CLASS}
-              aria-label="Reset zoom to 100%"
+              aria-label="缩放复位到 100%"
             >
               <span className="min-w-[2.4rem] text-center text-xs font-medium text-secondary-foreground">
                 {zoomPercent}%
               </span>
             </button>
           </TooltipTrigger>
-          <TooltipContent side="top">Reset zoom</TooltipContent>
+          <TooltipContent side="top">复位缩放</TooltipContent>
         </Tooltip>
 
         <Tooltip>
@@ -129,12 +129,12 @@ export function HarnessViewportControls() {
                 BTN_CLASS,
                 !canUndo && "pointer-events-none opacity-50",
               )}
-              aria-label="Undo"
+              aria-label="撤销"
             >
               <ArrowCounterClockwiseIcon className="size-4" weight="bold" />
             </button>
           </TooltipTrigger>
-          <TooltipContent side="top">Undo (Cmd/Ctrl+Z)</TooltipContent>
+          <TooltipContent side="top">撤销 (Cmd/Ctrl+Z)</TooltipContent>
         </Tooltip>
 
         <Tooltip>
@@ -147,12 +147,12 @@ export function HarnessViewportControls() {
                 BTN_CLASS,
                 !canRedo && "pointer-events-none opacity-50",
               )}
-              aria-label="Redo"
+              aria-label="重做"
             >
               <ArrowClockwiseIcon className="size-4" weight="bold" />
             </button>
           </TooltipTrigger>
-          <TooltipContent side="top">Redo (Cmd/Ctrl+Shift+Z)</TooltipContent>
+          <TooltipContent side="top">重做 (Cmd/Ctrl+Shift+Z)</TooltipContent>
         </Tooltip>
 
         <Popover>
@@ -162,7 +162,7 @@ export function HarnessViewportControls() {
                 <button
                   type="button"
                   className={BTN_CLASS}
-                  aria-label="Board background"
+                  aria-label="画布背景"
                 >
                   <span
                     className="size-4 rounded-full border-2 border-secondary-foreground/50"
@@ -171,18 +171,18 @@ export function HarnessViewportControls() {
                 </button>
               </PopoverTrigger>
             </TooltipTrigger>
-            <TooltipContent side="top">Background style</TooltipContent>
+            <TooltipContent side="top">背景样式</TooltipContent>
           </Tooltip>
           <PopoverContent side="top" align="start" className="w-auto p-2">
             <div className="flex items-center justify-between px-1 text-[11px] font-medium text-muted-foreground">
-              <span>Color</span>
+              <span>颜色</span>
               <button
                 type="button"
                 className="text-[11px] font-medium text-muted-foreground hover:text-foreground disabled:opacity-50"
                 onClick={() => setBoardBackground(null)}
                 disabled={!boardBackground}
               >
-                Reset
+                重置
               </button>
             </div>
             <div className="mt-1 grid grid-cols-10 gap-1">
@@ -198,14 +198,14 @@ export function HarnessViewportControls() {
               ))}
             </div>
             <div className="mt-3 flex items-center justify-between px-1 text-[11px] font-medium text-muted-foreground">
-              <span>Texture</span>
+              <span>纹理</span>
               <button
                 type="button"
                 className="text-[11px] font-medium text-muted-foreground hover:text-foreground disabled:opacity-50"
                 onClick={() => setBoardBackgroundTexture(null)}
                 disabled={!boardBackgroundTexture}
               >
-                Reset
+                重置
               </button>
             </div>
             <div className="mt-1 flex items-center justify-center gap-1">

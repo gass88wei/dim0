@@ -26,7 +26,7 @@ export function NotFoundPage() {
   return (
     <div className="absolute inset-0 flex items-center justify-center bg-transparent">
       <div className="flex flex-col items-center justify-center gap-0 text-center px-4">
-        <div className="text-3xl sm:text-4xl font-semibold text-foreground">Page not found</div>
+        <div className="text-3xl sm:text-4xl font-semibold text-foreground">页面不存在</div>
         <Lottie404 />
       </div>
     </div>

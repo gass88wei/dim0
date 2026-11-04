@@ -38,10 +38,10 @@ type Callout = {
 
 
 const CALLOUTS: Callout[] = [
-  { anchor: "title", label: "name your\ncanvas", color: SIDEBAR_COLORS[1], side: "below", dx: 18, dy: 70 },
-  { anchor: "toolbar", label: "tools to\nbuild", color: SIDEBAR_COLORS[0], side: "below", dx: 6, dy: 84 },
-  { anchor: "share", label: "share &\ninvite", color: SIDEBAR_COLORS[2], side: "below", dx: -14, dy: 70 },
-  { anchor: "ai-island", label: "or ask the\nAI agent", color: SIDEBAR_COLORS[3], side: "above", dx: 0, dy: -96 },
+  { anchor: "title", label: "给画布\n起个名", color: SIDEBAR_COLORS[1], side: "below", dx: 18, dy: 70 },
+  { anchor: "toolbar", label: "用来搭建\n的工具", color: SIDEBAR_COLORS[0], side: "below", dx: 6, dy: 84 },
+  { anchor: "share", label: "分享与\n邀请", color: SIDEBAR_COLORS[2], side: "below", dx: -14, dy: 70 },
+  { anchor: "ai-island", label: "或者问问\nAI 助手", color: SIDEBAR_COLORS[3], side: "above", dx: 0, dy: -96 },
 ]
 
 
@@ -57,13 +57,13 @@ type Ambient = {
 
 const AMBIENT: Ambient[] = [
   { kind: "note", color: SIDEBAR_COLORS[0], label: "ideas", fx: 0.15, fy: 0.34 },
-  { kind: "chip", color: SIDEBAR_COLORS[2], label: "#topic", fx: 0.28, fy: 0.66 },
+  { kind: "chip", color: SIDEBAR_COLORS[2], label: "#话题", fx: 0.28, fy: 0.66 },
   { kind: "dot", color: SIDEBAR_COLORS[1], label: "", fx: 0.21, fy: 0.5 },
-  { kind: "idea", color: SIDEBAR_COLORS[0], label: "a hunch", fx: 0.8, fy: 0.36 },
+  { kind: "idea", color: SIDEBAR_COLORS[0], label: "一个直觉", fx: 0.8, fy: 0.36 },
   { kind: "note", color: SIDEBAR_COLORS[3], label: "notes", fx: 0.86, fy: 0.62 },
   { kind: "dot", color: SIDEBAR_COLORS[2], label: "", fx: 0.72, fy: 0.52 },
-  { kind: "chip", color: SIDEBAR_COLORS[1], label: "#link", fx: 0.52, fy: 0.82 },
-  { kind: "note", color: SIDEBAR_COLORS[1], label: "to-do", fx: 0.62, fy: 0.2 },
+  { kind: "chip", color: SIDEBAR_COLORS[1], label: "#链接", fx: 0.52, fy: 0.82 },
+  { kind: "note", color: SIDEBAR_COLORS[1], label: "待办", fx: 0.62, fy: 0.2 },
   { kind: "dot", color: SIDEBAR_COLORS[0], label: "", fx: 0.4, fy: 0.18 },
 ]
 

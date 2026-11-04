@@ -13,12 +13,12 @@ export type DurableDeleteMeta = { title: string; description: string }
 
 export const DURABLE_DELETE: Record<string, DurableDeleteMeta> = {
   folder: {
-    title: "Delete this folder?",
-    description: "Its contents are removed from the board. This can't be undone.",
+    title: "删除这个文件夹？",
+    description: "其中的内容会从画布中移除，且无法撤销。",
   },
   document: {
-    title: "Delete this document?",
-    description: "It's removed from the board along with its Q&A content. This can't be undone.",
+    title: "删除这个文档？",
+    description: "它会连同问答内容一起从画布中移除，且无法撤销。",
   },
 }
 
