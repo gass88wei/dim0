@@ -9,7 +9,7 @@ export type PasswordChecks = {
 
 export type PasswordStrength = {
   score: number
-  label: "非常弱" | "Weak" | "Fair" | "Good" | "Strong"
+  label: "非常弱" | "弱" | "一般" | "良好" | "很强"
   checks: PasswordChecks
   isValid: boolean
 }
@@ -28,7 +28,7 @@ export function getPasswordStrength(password: string): PasswordStrength {
   }
 
   const score = Object.values(checks).filter(Boolean).length
-  const labels: PasswordStrength["label"][] = ["Very weak", "Weak", "Fair", "Good", "Strong"]
+  const labels: PasswordStrength["label"][] = ["非常弱", "弱", "一般", "良好", "很强"]
 
   return {
     score,
